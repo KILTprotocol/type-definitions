@@ -14,4 +14,4 @@ jobs:
       - name: Publish to NPM
         run: npm publish --access public
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
