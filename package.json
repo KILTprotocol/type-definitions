@@ -4,6 +4,9 @@
   "description": "polkadot js type defitinitons for kilt",
   "main": "./src/index.ts",
   "license": "BSD-4-Clause",
+  "scripts": {
+    "publish": "npm publish"
+  },
   "publishConfig": {
     "access": "public"
   },

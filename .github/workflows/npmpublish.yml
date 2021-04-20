@@ -12,6 +12,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Publish to NPM
-        run: npm publish --access public
+        run: yarn run publish --tag latest
         env:
-          NPM_CONFIG_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
