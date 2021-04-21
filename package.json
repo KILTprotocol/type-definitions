@@ -2,10 +2,13 @@
   "name": "@kiltprotocol/type-definitions",
   "repository": "https://github.com/kiltprotocol/type-definitions",
   "description": "polkadot js type defitinitons for kilt",
-  "main": "./src/index.ts",
+  "main": "./lib/index.js",
+  "files": [
+    "/lib"
+  ],
   "license": "BSD-4-Clause",
   "scripts": {
-    "publish": "npm publish"
+    "build": "tsc"
   },
   "publishConfig": {
     "access": "public"

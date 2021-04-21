@@ -3,7 +3,7 @@ import type {
   RegistryTypes,
 } from "@polkadot/types/types";
 
-export const bundle: RegistryTypes = {
+export const types: RegistryTypes = {
   Attestation: {
     attester: "AccountId",
     ctypeHash: "Hash",
@@ -84,7 +84,7 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
     {
       // on all versions
       minmax: [0, undefined],
-      types: bundle,
+      types,
     },
   ],
 };

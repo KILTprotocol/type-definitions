@@ -8,7 +8,8 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "declaration": true,
+    "outDir": "lib/"
   },
-  "include": ["src/**/*.ts", "src/**/*.js"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
