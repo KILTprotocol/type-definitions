@@ -13,8 +13,6 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Show npmrc
-        run: cat .npmrc
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build package
