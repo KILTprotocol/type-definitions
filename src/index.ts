@@ -4,6 +4,7 @@ import type {
 } from "@polkadot/types/types";
 
 export const types: RegistryTypes = {
+  Address: 'MultiAddress',
   Attestation: {
     attester: "AccountId",
     ctypeHash: "Hash",
@@ -30,6 +31,7 @@ export const types: RegistryTypes = {
     signKey: "Hash",
   },
   Index: "u64",
+	LookupSource: 'AccountId',
   Permissions: "u32",
   PublicBoxKey: "Hash",
   PublicSigningKey: "Hash",
