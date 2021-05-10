@@ -82,14 +82,19 @@ export const types8: RegistryTypes = {
 };
 
 export const types9: RegistryTypes = {
+  // Runtime types
   Address: "MultiAddress",
   AmountOf: "i128",
   Balance: "u128",
   BlockNumber: "u64",
   Index: "u64",
   LookupSource: "MultiAddress",
+
+  // Ctype types
   CtypeCreator: "DidIdentifier",
   CtypeHash: "Hash",
+
+  // Attestation types
   ClaimHash: "Hash",
   Attester: "DidIdentifier",
   Attestation: {
@@ -98,6 +103,8 @@ export const types9: RegistryTypes = {
     delegation_id: "Option<DelegationNodeId>",
     revoked: "bool",
   },
+
+  // Delegation types
   Permissions: "u32",
   DelegationNodeId: "Hash",
   DelegatorId: "DidIdentifier",
@@ -114,6 +121,8 @@ export const types9: RegistryTypes = {
     permissions: "Permissions",
     revoked: "bool",
   },
+  
+  // Did types
   KeyId: "Hash",
   DidIdentifier: "AccountId",
   AccountIdentifier: "AccountId",
@@ -214,14 +223,14 @@ export const types9: RegistryTypes = {
       Delete: "null",
     },
   },
-  DidAuthorizedCallOperation: {
-    did: "DidIdentifier",
-    call: "DidCallable",
-    txCounter: "u64",
-  },
   DidDeletionOperation: {
     did: "DidIdentifier",
     txCounter: "u64",
+  },
+  DidAuthorizedCallOperation: {
+    did: "DidIdentifier",
+    txCounter: "u64",
+    call: "DidCallable",
   },
   HttpUrl: {
     payload: "Text",
