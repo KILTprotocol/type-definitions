@@ -164,17 +164,17 @@ export const types9: RegistryTypes = {
       StorageError: "StorageError",
       SignatureError: "SignatureError",
       UrlError: "UrlError",
-      InternalError: "null",
+      InternalError: "Null",
     },
   },
   StorageError: {
     _enum: {
-      DidAlreadyPresent: "null",
-      DidNotPresent: "null",
+      DidAlreadyPresent: "Null",
+      DidNotPresent: "Null",
       DidKeyNotPresent: "DidVerificationKeyRelationship",
-      VerificationKeyNotPresent: "null",
-      CurrentlyActiveKey: "null",
-      MaxTxCounterValue: "null",
+      VerificationKeyNotPresent: "Null",
+      CurrentlyActiveKey: "Null",
+      MaxTxCounterValue: "Null",
     },
   },
   SignatureError: {
@@ -219,9 +219,9 @@ export const types9: RegistryTypes = {
   },
   DidVerificationKeyUpdateAction: {
     _enum: {
-      Ignore: "null",
+      Ignore: "Null",
       Change: "DidVerificationKey",
-      Delete: "null",
+      Delete: "Null",
     },
   },
   DidDeletionOperation: {
