@@ -5,7 +5,7 @@ import type {
 
 export const types8: RegistryTypes = {
   Address: 'AccountId',
-  AttestationDetails: {
+  Attestation: {
     attester: "AccountId",
     ctypeHash: "Hash",
     delegationId: "Option<DelegationNodeId>",
@@ -97,7 +97,7 @@ export const types9: RegistryTypes = {
   // Attestation types
   ClaimHashOf: "Hash",
   AttesterOf: "DidIdentifierOf",
-  Attestation: {
+  AttestationDetails: {
     ctype_hash: "CtypeHashOf",
     attester: "AttesterOf",
     delegation_id: "Option<DelegationNodeIdOf>",
@@ -249,6 +249,12 @@ export const types9: RegistryTypes = {
       Ipfs: "IpfsUrl",
     },
   },
+
+  // Launch types
+  LockedBalance: {
+    block: "BlockNumber",
+    amount: "Balance"
+  }
 };
 
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
