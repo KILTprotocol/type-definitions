@@ -5,7 +5,7 @@ import type {
 
 export const types8: RegistryTypes = {
   Address: 'AccountId',
-  Attestation: {
+  AttestationDetails: {
     attester: "AccountId",
     ctypeHash: "Hash",
     delegationId: "Option<DelegationNodeId>",
