@@ -91,42 +91,43 @@ export const types9: RegistryTypes = {
   LookupSource: "MultiAddress",
 
   // Ctype types
-  CtypeCreator: "DidIdentifier",
-  CtypeHash: "Hash",
+  CtypeCreatorOf: "DidIdentifierOf",
+  CtypeHashOf: "Hash",
 
   // Attestation types
-  ClaimHash: "Hash",
-  Attester: "DidIdentifier",
+  ClaimHashOf: "Hash",
+  AttesterOf: "DidIdentifierOf",
   Attestation: {
-    ctype_hash: "CtypeHash",
-    attester: "Attester",
-    delegation_id: "Option<DelegationNodeId>",
+    ctype_hash: "CtypeHashOf",
+    attester: "AttesterOf",
+    delegation_id: "Option<DelegationNodeIdOf>",
     revoked: "bool",
   },
 
   // Delegation types
   Permissions: "u32",
-  DelegationNodeId: "Hash",
-  DelegatorId: "DidIdentifier",
+  DelegationNodeIdOf: "Hash",
+  DelegatorIdOf: "DidIdentifierOf",
   DelegationSignature: "DidSignature",
   DelegationRoot: {
-    ctype_hash: "CtypeHash",
-    owner: "DelegatorId",
+    ctype_hash: "CtypeHashOf",
+    owner: "DelegatorIdOf",
     revoked: "bool",
   },
   DelegationNode: {
-    root_id: "DelegationNodeId",
-    parent: "Option<DelegationNodeId>",
-    owner: "DelegatorId",
+    root_id: "DelegationNodeIdOf",
+    parent: "Option<DelegationNodeIdOf>",
+    owner: "DelegatorIdOf",
     permissions: "Permissions",
     revoked: "bool",
   },
   
   // Did types
-  KeyId: "Hash",
-  DidIdentifier: "AccountId",
-  AccountIdentifier: "AccountId",
-  DidCallable: "Call",
+  KeyIdOf: "Hash",
+  DidIdentifierOf: "AccountId",
+  AccountIdentifierOf: "AccountId",
+  BlockNumberOf: "BlockNumber",
+  DidCallableOf: "Call",
   DidVerificationKey: {
     _enum: {
       Ed25519: "[u8; 32]",
@@ -187,19 +188,19 @@ export const types9: RegistryTypes = {
   },
   DidPublicKeyDetails: {
     key: "DidPublicKey",
-    blockNumber: "BlockNumber",
+    blockNumber: "BlockNumberOf",
   },
   DidDetails: {
-    authenticationKey: "KeyId",
-    keyAgreementKeys: "BTreeSet<KeyId>",
-    delegationKey: "Option<KeyId>",
-    attestationKey: "Option<KeyId>",
-    publicKeys: "BTreeMap<KeyId, DidPublicKeyDetails>",
+    authenticationKey: "KeyIdOf",
+    keyAgreementKeys: "BTreeSet<KeyIdOf>",
+    delegationKey: "Option<KeyIdOf>",
+    attestationKey: "Option<KeyIdOf>",
+    publicKeys: "BTreeMap<KeyIdOf, DidPublicKeyDetails>",
     endpointUrl: "Option<Url>",
     lastTxCounter: "u64",
   },
   DidCreationOperation: {
-    did: "DidIdentifier",
+    did: "DidIdentifierOf",
     newAuthenticationKey: "DidVerificationKey",
     newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
     newAttestationKey: "Option<DidVerificationKey>",
@@ -207,12 +208,12 @@ export const types9: RegistryTypes = {
     newEndpointUrl: "Option<Url>",
   },
   DidUpdateOperation: {
-    did: "DidIdentifier",
+    did: "DidIdentifierOf",
     newAuthenticationKey: "Option<DidVerificationKey>",
     newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
     attestationKeyUpdate: "DidVerificationKeyUpdateAction",
     delegationKeyUpdate: "DidVerificationKeyUpdateAction",
-    publicKeysToRemove: "BTreeSet<KeyId>",
+    publicKeysToRemove: "BTreeSet<KeyIdOf>",
     newEndpointUrl: "Option<Url>",
     txCounter: "u64",
   },
@@ -224,13 +225,13 @@ export const types9: RegistryTypes = {
     },
   },
   DidDeletionOperation: {
-    did: "DidIdentifier",
+    did: "DidIdentifierOf",
     txCounter: "u64",
   },
   DidAuthorizedCallOperation: {
-    did: "DidIdentifier",
+    did: "DidIdentifierOf",
     txCounter: "u64",
-    call: "DidCallable",
+    call: "DidCallableOf",
   },
   HttpUrl: {
     payload: "Text",
