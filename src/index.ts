@@ -4,7 +4,7 @@ import type {
 } from "@polkadot/types/types";
 
 export const types8: RegistryTypes = {
-  Address: 'AccountId',
+  Address: "AccountId",
   Attestation: {
     attester: "AccountId",
     ctypeHash: "Hash",
@@ -31,7 +31,7 @@ export const types8: RegistryTypes = {
     signKey: "Hash",
   },
   Index: "u64",
-	LookupSource: 'AccountId',
+  LookupSource: "AccountId",
   Permissions: "u32",
   PublicBoxKey: "Hash",
   PublicSigningKey: "Hash",
@@ -97,10 +97,10 @@ export const types9: RegistryTypes = {
   // Attestation types
   ClaimHashOf: "Hash",
   AttesterOf: "DidIdentifierOf",
-  AttestationDetails: {
-    ctype_hash: "CtypeHashOf",
+  Attestation: {
+    ctypeHash: "CtypeHashOf",
     attester: "AttesterOf",
-    delegation_id: "Option<DelegationNodeIdOf>",
+    delegationId: "Option<DelegationNodeIdOf>",
     revoked: "bool",
   },
 
@@ -110,18 +110,18 @@ export const types9: RegistryTypes = {
   DelegatorIdOf: "DidIdentifierOf",
   DelegationSignature: "DidSignature",
   DelegationRoot: {
-    ctype_hash: "CtypeHashOf",
+    ctypeHash: "CtypeHashOf",
     owner: "DelegatorIdOf",
     revoked: "bool",
   },
   DelegationNode: {
-    root_id: "DelegationNodeIdOf",
+    rootId: "DelegationNodeIdOf",
     parent: "Option<DelegationNodeIdOf>",
     owner: "DelegatorIdOf",
     permissions: "Permissions",
     revoked: "bool",
   },
-  
+
   // Did types
   KeyIdOf: "Hash",
   DidIdentifierOf: "AccountId",
@@ -253,8 +253,8 @@ export const types9: RegistryTypes = {
   // Launch types
   LockedBalance: {
     block: "BlockNumber",
-    amount: "Balance"
-  }
+    amount: "Balance",
+  },
 };
 
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
@@ -262,9 +262,10 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
     {
       minmax: [0, 8],
       types: types8,
-    }, {
+    },
+    {
       minmax: [9, undefined],
       types: types9,
-    }
+    },
   ],
 };
