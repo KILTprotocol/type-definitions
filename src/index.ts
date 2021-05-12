@@ -97,7 +97,7 @@ export const types9: RegistryTypes = {
   // Attestation types
   ClaimHashOf: "Hash",
   AttesterOf: "DidIdentifierOf",
-  Attestation: {
+  AttestationDetails: {
     ctypeHash: "CtypeHashOf",
     attester: "AttesterOf",
     delegationId: "Option<DelegationNodeIdOf>",
