@@ -6,18 +6,18 @@ import type {
 export const types8: RegistryTypes = {
   Address: "AccountId",
   Attestation: {
-    attester: "AccountId",
     ctypeHash: "Hash",
+    attester: "AccountId",
     delegationId: "Option<DelegationNodeId>",
     revoked: "bool",
   },
   Balance: "u128",
   DelegationNode: {
-    owner: "AccountId",
+    rootId: "DelegationNodeId",
     parent: "Option<DelegationNodeId>",
+    owner: "AccountId",
     permissions: "Permissions",
     revoked: "bool",
-    rootId: "DelegationNodeId",
   },
   DelegationNodeId: "Hash",
   DelegationRoot: {
@@ -26,9 +26,9 @@ export const types8: RegistryTypes = {
     revoked: "bool",
   },
   DidRecord: {
+    signKey: "Hash",
     boxKey: "Hash",
     docRef: "Option<Vec<u8>>",
-    signKey: "Hash",
   },
   Index: "u64",
   LookupSource: "AccountId",
