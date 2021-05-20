@@ -4,6 +4,7 @@ import type {
 } from "@polkadot/types/types";
 
 export const types8: RegistryTypes = {
+  AccountInfo: "AccountInfoWithDualRefCount",
   Address: "AccountId",
   Attestation: {
     ctypeHash: "Hash",
@@ -83,6 +84,7 @@ export const types8: RegistryTypes = {
 
 export const types9: RegistryTypes = {
   // Runtime types
+  AccountInfo: "AccountInfoWithTripleRefCount",
   Address: "MultiAddress",
   AmountOf: "i128",
   Balance: "u128",
