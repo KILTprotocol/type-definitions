@@ -1,4 +1,7 @@
-import type { OverrideBundleDefinition, RegistryTypes } from "@polkadot/types/types";
+import type {
+  OverrideBundleDefinition,
+  RegistryTypes,
+} from "@polkadot/types/types";
 
 export const types8: RegistryTypes = {
   AccountInfo: "AccountInfoWithDualRefCount",
@@ -145,7 +148,12 @@ export const types9: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
+    _enum: [
+      "Authentication",
+      "CapabilityDelegation",
+      "CapabilityInvocation",
+      "AssertionMethod",
+    ],
   },
   DidSignature: {
     _enum: {
@@ -317,7 +325,12 @@ export const types10: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
+    _enum: [
+      "Authentication",
+      "CapabilityDelegation",
+      "CapabilityInvocation",
+      "AssertionMethod",
+    ],
   },
   DidSignature: {
     _enum: {
