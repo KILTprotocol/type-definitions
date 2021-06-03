@@ -464,18 +464,18 @@ export const types10: RegistryTypes = {
     perBlock: "Perquintill",
   },
   Delegator: {
-    delegations: "OrderedSet",
+    delegations: "Vec<Stake>",
     total: "Balance",
   },
   CollatorSnapshot: {
     stake: "Balance",
-    delegators: "OrderedSet",
+    delegators: "Vec<Stake>",
     total: "Balance",
   },
   Collator: {
     id: "AccountId",
     stake: "Balance",
-    delegators: "OrderedSet",
+    delegators: "Vec<Stake>",
     total: "Balance",
     state: "CollatorStatus",
   },
