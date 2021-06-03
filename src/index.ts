@@ -423,9 +423,9 @@ export const types10: RegistryTypes = {
   },
 
   // Staking
-  RoundIndex: "u32",
+  BalanceOf: "Balance",
   RoundInfo: {
-    current: "RoundIndex",
+    current: "SessionIndex",
     first: "BlockNumber",
     length: "BlockNumber",
   },
@@ -451,25 +451,24 @@ export const types10: RegistryTypes = {
     perBlock: "Perquintill",
   },
   Delegator: {
-    delegations: "Vec<Stake>",
+    delegations: "OrderedSet",
     total: "Balance",
   },
   CollatorSnapshot: {
     stake: "Balance",
-    delegators: "Vec<Stake>",
+    delegators: "OrderedSet",
     total: "Balance",
   },
   Collator: {
     id: "AccountId",
     stake: "Balance",
-    delegators: "Vec<Stake>",
+    delegators: "OrderedSet",
     total: "Balance",
     state: "CollatorStatus",
   },
   CollatorStatus: {
     _enum: {
       Active: "Null",
-      Idle: "Null",
       Leaving: "SessionIndex",
     },
   },
