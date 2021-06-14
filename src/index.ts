@@ -270,12 +270,12 @@ export const types10: RegistryTypes = {
   LookupSource: "MultiAddress",
 
   // Ctypes
-  CtypeCreatorOf: "DidIdentifierOf",
+  CtypeCreatorOf: "AccountId",
   CtypeHashOf: "Hash",
   ClaimHashOf: "Hash",
 
   // Attestations
-  AttesterOf: "DidIdentifierOf",
+  AttesterOf: "AccountId",
   AttestationDetails: {
     ctypeHash: "CtypeHashOf",
     attester: "AttesterOf",
@@ -286,8 +286,8 @@ export const types10: RegistryTypes = {
   // Delegations
   Permissions: "u32",
   DelegationNodeIdOf: "Hash",
-  DelegatorIdOf: "DidIdentifierOf",
-  DelegationSignature: "DidSignature",
+  DelegatorIdOf: "AccountId",
+  DelegateSignatureTypeOf: "Vec<u8>",
   DelegationRoot: {
     ctypeHash: "CtypeHashOf",
     owner: "DelegatorIdOf",
