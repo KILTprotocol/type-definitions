@@ -330,6 +330,7 @@ export const types10: RegistryTypes = {
       StorageError: "StorageError",
       SignatureError: "SignatureError",
       UrlError: "UrlError",
+      InputError: "InputError",
       InternalError: "Null",
     },
   },
@@ -351,6 +352,9 @@ export const types10: RegistryTypes = {
   },
   UrlError: {
     _enum: ["InvalidUrlEncoding", "InvalidUrlScheme"],
+  },
+  InputError: {
+    _enum: ["MaxKeyAgreementKeysLimitExceeded", "MaxVerificationKeysToRemoveLimitExceeded", "MaxUrlLengthExceeded"],
   },
   DidPublicKeyDetails: {
     key: "DidPublicKey",
@@ -454,9 +458,10 @@ export const types10: RegistryTypes = {
     delegations: "Vec<Stake>",
     total: "Balance",
   },
-  DelegationCounter: {
-    round: "SessionIndex",
-    counter: "u32",
+  CollatorSnapshot: {
+    stake: "Balance",
+    delegators: "Vec<Stake>",
+    total: "Balance",
   },
   Collator: {
     id: "AccountId",
@@ -475,9 +480,25 @@ export const types10: RegistryTypes = {
 
 export const types12: RegistryTypes = {
   ...types10,
+  // Staking updated types
   DelegationCounter: {
     round: "SessionIndex",
     counter: "u32",
+  },
+  // DID updated types
+  DidVerificationKey: {
+    _enum: {
+      Ed25519: "[u8; 32]",
+      Sr25519: "[u8; 32]",
+      Ecdsa: "[u8; 33]",
+    },
+  },
+  DidSignature: {
+    _enum: {
+      Ed25519: "Ed25519Signature",
+      Sr25519: "Sr25519Signature",
+      Ecdsa: "EcdsaSignature",
+    },
   },
 };
 
