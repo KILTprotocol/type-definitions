@@ -1,7 +1,4 @@
-import type {
-  OverrideBundleDefinition,
-  RegistryTypes,
-} from "@polkadot/types/types";
+import type { OverrideBundleDefinition, RegistryTypes } from "@polkadot/types/types";
 
 export const types8: RegistryTypes = {
   AccountInfo: "AccountInfoWithDualRefCount",
@@ -148,12 +145,7 @@ export const types9: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: [
-      "Authentication",
-      "CapabilityDelegation",
-      "CapabilityInvocation",
-      "AssertionMethod",
-    ],
+    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
   },
   DidSignature: {
     _enum: {
@@ -325,12 +317,7 @@ export const types10: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: [
-      "Authentication",
-      "CapabilityDelegation",
-      "CapabilityInvocation",
-      "AssertionMethod",
-    ],
+    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
   },
   DidSignature: {
     _enum: {
@@ -467,10 +454,9 @@ export const types10: RegistryTypes = {
     delegations: "Vec<Stake>",
     total: "Balance",
   },
-  CollatorSnapshot: {
-    stake: "Balance",
-    delegators: "Vec<Stake>",
-    total: "Balance",
+  DelegationCounter: {
+    round: "SessionIndex",
+    counter: "u32",
   },
   Collator: {
     id: "AccountId",
@@ -487,6 +473,14 @@ export const types10: RegistryTypes = {
   },
 };
 
+export const types12: RegistryTypes = {
+  ...types10,
+  DelegationCounter: {
+    round: "SessionIndex",
+    counter: "u32",
+  },
+};
+
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
@@ -498,8 +492,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types9,
     },
     {
-      minmax: [10, undefined],
+      minmax: [10, 11],
       types: types10,
+    },
+    {
+      minmax: [12, undefined],
+      types: types12,
     },
   ],
 };
