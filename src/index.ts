@@ -506,7 +506,7 @@ export const types17: RegistryTypes = {
   ...types12,
   // Delegation updated types
   DelegationNode: {
-    hierarchy_root_id: "DelegationNodeIdOf",
+    hierarchyRootId: "DelegationNodeIdOf",
     parent: "Option<DelegationNodeIdOf>",
     children: "BTreeSet<DelegationNodeIdOf>",
     details: "DelegationDetails",
@@ -517,7 +517,7 @@ export const types17: RegistryTypes = {
     permissions: "Permissions",
   },
   DelegationHierarchyDetails: {
-    ctype_hash: "CtypeHashOf",
+    ctypeHash: "CtypeHashOf",
   },
 };
 
