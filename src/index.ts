@@ -502,6 +502,25 @@ export const types12: RegistryTypes = {
   },
 };
 
+export const types17: RegistryTypes = {
+  ...types12,
+  // Delegation updated types
+  DelegationNode: {
+    hierarchy_root_id: "DelegationNodeIdOf",
+    parent: "Option<DelegationNodeIdOf>",
+    children: "BTreeSet<DelegationNodeIdOf>",
+    details: "DelegationDetails",
+  },
+  DelegationDetails: {
+    owner: "DelegatorIdOf",
+    revoked: "bool",
+    permissions: "Permissions",
+  },
+  DelegationHierarchyDetails: {
+    ctype_hash: "CtypeHashOf",
+  },
+};
+
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
@@ -517,8 +536,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types10,
     },
     {
-      minmax: [12, undefined],
+      minmax: [12, 16],
       types: types12,
+    },
+    {
+      minmax: [17, undefined],
+      types: types17,
     },
   ],
 };
