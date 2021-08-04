@@ -490,14 +490,14 @@ export const types12: RegistryTypes = {
     _enum: {
       Ed25519: "[u8; 32]",
       Sr25519: "[u8; 32]",
-      Ecdsa: "[u8; 33]",
+      EcdsaSecp256k1: "[u8; 33]",
     },
   },
   DidSignature: {
     _enum: {
       Ed25519: "Ed25519Signature",
       Sr25519: "Sr25519Signature",
-      Ecdsa: "EcdsaSignature",
+      EcdsaSecp256k1: "EcdsaSignature",
     },
   },
 };
