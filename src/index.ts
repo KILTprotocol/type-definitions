@@ -523,6 +523,11 @@ export const types17: RegistryTypes = {
 
 export const types18: RegistryTypes = {
   ...types17,
+  // Remove old DID types
+  DidCreationOperation: undefined,
+  DidUpdateOperation: undefined,
+  DidDeletionOperation: undefined,
+
   // DID management update
   DidCreationDetails: {
     did: "DidIdentifierOf",
