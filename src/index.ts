@@ -521,6 +521,31 @@ export const types17: RegistryTypes = {
   },
 };
 
+export const types18: RegistryTypes = {
+  ...types17,
+  // Remove old DID types
+  DidCreationOperation: undefined,
+  DidUpdateOperation: undefined,
+  DidDeletionOperation: undefined,
+
+  // DID management update
+  DidCreationDetails: {
+    did: "DidIdentifierOf",
+    newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
+    newAttestationKey: "Option<DidVerificationKey>",
+    newDelegationKey: "Option<DidVerificationKey>",
+    newEndpointUrl: "Option<Url>",
+  },
+  DidUpdateDetails: {
+    newAuthenticationKey: "Option<DidVerificationKey>",
+    newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
+    attestationKeyUpdate: "DidVerificationKeyUpdateAction",
+    delegationKeyUpdate: "DidVerificationKeyUpdateAction",
+    publicKeysToRemove: "BTreeSet<KeyIdOf>",
+    newEndpointUrl: "Option<Url>",
+  },
+};
+
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
@@ -540,8 +565,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types12,
     },
     {
-      minmax: [17, undefined],
+      minmax: [17, 17],
       types: types17,
+    },
+    {
+      minmax: [18, undefined],
+      types: types18,
     },
   ],
 };
