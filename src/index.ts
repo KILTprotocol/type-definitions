@@ -548,7 +548,7 @@ export const types18: RegistryTypes = {
 
 export const types19: RegistryTypes = {
   ...types18,
-  
+
   // Remove old types
   DidVerificationKeyUpdateAction: undefined,
 
@@ -561,18 +561,16 @@ export const types19: RegistryTypes = {
   DidFragmentUpdateAction: {
     _enum: {
       Ignore: "Null",
-      Change: {
-        _enum: ["DidVerificationKey", "ServiceEndPoints"],
-      },
+      Change: "FragmentType",
       Delete: "Null",
-    }
+    },
+  },
+  FragmentType: {
+    _enum: ["DidVerificationKey", "ServiceEndPoints"],
   },
   ContentType: {
-    _enum: [
-      "ApplicationJson",
-      "ApplicationJsonLd"
-    ]
-  },  
+    _enum: ["ApplicationJson", "ApplicationJsonLd"],
+  },
 
   // Updated types
   DidCreationDetails: {
@@ -600,7 +598,117 @@ export const types19: RegistryTypes = {
     lastTxCounter: "u64",
   },
   DidStorageVersion: {
-    _enum: ["V1", "V2"]
+    _enum: ["V1", "V2"],
+  },
+};
+
+export const types20: RegistryTypes = {
+  ...types19,
+
+  // Staking
+  CollatorSnapshot: undefined,
+  OrderedSet: "BoundedVec<Stake, MaxCollatorCandidates>",
+  MaxCollatorCandidates: "u32",
+  Collator: {
+    id: "AccountId",
+    stake: "Balance",
+    // new
+    delegators: "OrderedSet<Stake, MaxDelegatorsPerCollator",
+    total: "Balance",
+    state: "CollatorStatus",
+  },
+  MaxDelegatorsPerCollator: "u32",
+  Delegator: {
+    // new
+    delegations: "OrderedSet<Stake, MaxCollatorsPerDelegator",
+    total: "Balance",
+  },
+  MaxCollatorsPerDelegator: "u32",
+
+  // Attestation
+  MaxDelegatedAttestations: "u32",
+
+  // KILT Launch
+  MaxClaims: "u32",
+
+  // Delegation
+  DelegationNode: {
+    hierarchyRootId: "DelegationNodeIdOf",
+    parent: "Option<DelegationNodeIdOf>",
+    // new
+    children: "BoundedBTreeSet<DelegationNodeIdOf, MaxChildren>",
+    details: "DelegationDetails",
+  },
+  MaxChildren: "u32",
+
+  // DIDs
+  DidNewKeyAgreementKeys: "BoundedBTreeSet<DidEncryptionKey, MaxNewKeyAgreementKeys>",
+  DidKeyAgreementKeys: "BoundedBTreeSet<KeyIdOf, MaxTotalKeyAgreementKeys>",
+  DidVerificationKeysToRevoke: "BoundedBTreeSet<KeyIdOf, MaxVerificationKeysToRevoke>",
+  MaxNewKeyAgreementKeys: "u32",
+  MaxTotalKeyAgreementKeys: "u32",
+  MaxVerificationKeysToRevoke: "u32",
+  MaxPublicKeysPerDid: "u32",
+  DidPublicKeyMap: "BoundedBTreeMap<KeyIdOf, DidPublicKeyDetails, MaxPublicKeysPerDid>",
+  DidCreationDetails: {
+    did: "DidIdentifierOf",
+    newKeyAgreementKeys: "DidNewKeyAgreementKeys",
+    newAttestationKey: "Option<DidVerificationKey>",
+    newDelegationKey: "Option<DidVerificationKey>",
+    newServiceEndpoints: "Option<ServiceEndpoints>",
+  },
+  DidUpdateDetails: {
+    newAuthenticationKey: "Option<DidVerificationKey>",
+    // new
+    newKeyAgreementKeys: "DidNewKeyAgreementKeys",
+    attestationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
+    delegationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
+    // new
+    publicKeysToRemove: "DidVerificationKeysToRevoke",
+    serviceEndpointsUpdate: "DidFragmentUpdateAction<ServiceEndpoints>",
+  },
+  DidDetails: {
+    authenticationKey: "KeyIdOf",
+    // new
+    keyAgreementKeys: "DidKeyAgreementKeys",
+    delegationKey: "Option<KeyIdOf>",
+    attestationKey: "Option<KeyIdOf>",
+    // new
+    publicKeys: "DidPublicKeyMap",
+    serviceEndpoints: "Option<ServiceEndpoints>",
+    lastTxCounter: "u64",
+  },
+  ServiceEndpoints: {
+    contentHash: "Hash",
+    // new
+    urls: "BoundedVec<Url, MaxEndpointUrlsCount>",
+    contentType: "ContentType",
+  },
+  // TODO: Check
+  HttpUrl: {
+    payload: "BoundedVec<u8, MaxUrlLength>",
+  },
+  FtpUrl: {
+    payload: "BoundedVec<u8, MaxUrlLength>",
+  },
+  IpfsUrl: {
+    payload: "BoundedVec<u8, MaxUrlLength>",
+  },
+  MaxUrlLength: "u32",
+  MaxEndpointUrlsCount: "u32",
+  StorageError: {
+    _enum: {
+      DidAlreadyPresent: "Null",
+      DidNotPresent: "Null",
+      DidKeyNotPresent: "DidVerificationKeyRelationship",
+      VerificationKeyNotPresent: "Null",
+      CurrentlyActiveKey: "Null",
+      MaxTxCounterValue: "Null",
+      // new
+      MaxPublicKeysPerDidKeyIdentifierExceeded: "Null",
+      MaxTotalKeyAgreementKeysExceeded: "Null",
+      MaxOldAttestationKeysExceeded: "Null",
+    },
   },
 };
 
@@ -631,8 +739,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types18,
     },
     {
-      minmax: [19, undefined],
+      minmax: [19, 19],
       types: types19,
+    },
+    {
+      minmax: [20, undefined],
+      types: types20,
     },
   ],
 };
