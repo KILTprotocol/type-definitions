@@ -546,6 +546,64 @@ export const types18: RegistryTypes = {
   },
 };
 
+export const types19: RegistryTypes = {
+  ...types18,
+  
+  // Remove old types
+  DidVerificationKeyUpdateAction: undefined,
+
+  // New types
+  ServiceEndpoints: {
+    contentHash: "Hash",
+    urls: "Vec<Url>",
+    contentType: "ContentType",
+  },
+  DidFragmentUpdateAction: {
+    _enum: {
+      Ignore: "Null",
+      Change: {
+        _enum: ["DidVerificationKey", "ServiceEndPoints"],
+      },
+      Delete: "Null",
+    }
+  },
+  ContentType: {
+    _enum: [
+      "ApplicationJson",
+      "ApplicationJsonLd"
+    ]
+  },  
+
+  // Updated types
+  DidCreationDetails: {
+    did: "DidIdentifierOf",
+    newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
+    newAttestationKey: "Option<DidVerificationKey>",
+    newDelegationKey: "Option<DidVerificationKey>",
+    newServiceEndpoints: "Option<ServiceEndpoints>",
+  },
+  DidUpdateDetails: {
+    newAuthenticationKey: "Option<DidVerificationKey>",
+    newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
+    attestationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
+    delegationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
+    publicKeysToRemove: "BTreeSet<KeyIdOf>",
+    serviceEndpointsUpdate: "DidFragmentUpdateAction<ServiceEndpoints>",
+  },
+  DidDetails: {
+    authenticationKey: "KeyIdOf",
+    keyAgreementKeys: "BTreeSet<KeyIdOf>",
+    delegationKey: "Option<KeyIdOf>",
+    attestationKey: "Option<KeyIdOf>",
+    publicKeys: "BTreeMap<KeyIdOf, DidPublicKeyDetails>",
+    serviceEndpoints: "Option<ServiceEndpoints>",
+    lastTxCounter: "u64",
+  },
+  DidStorageVersion: {
+    _enum: ["V1", "V2"]
+  },
+};
+
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
@@ -569,8 +627,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types17,
     },
     {
-      minmax: [18, undefined],
+      minmax: [18, 18],
       types: types18,
+    },
+    {
+      minmax: [19, undefined],
+      types: types19,
     },
   ],
 };
