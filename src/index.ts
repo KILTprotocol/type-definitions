@@ -558,15 +558,19 @@ export const types19: RegistryTypes = {
     urls: "Vec<Url>",
     contentType: "ContentType",
   },
-  DidFragmentUpdateAction: {
+  DidFragmentUpdateAction_ServicEndpoints: {
     _enum: {
       Ignore: "Null",
-      Change: "FragmentType",
+      Change: "ServiceEndpoints",
       Delete: "Null",
     },
   },
-  FragmentType: {
-    _enum: ["DidVerificationKey", "ServiceEndPoints"],
+  DidFragmentUpdateAction_DidVerificationKey: {
+    _enum: {
+      Ignore: "Null",
+      Change: "DidVerificationKey",
+      Delete: "Null",
+    },
   },
   ContentType: {
     _enum: ["ApplicationJson", "ApplicationJsonLd"],
@@ -583,10 +587,10 @@ export const types19: RegistryTypes = {
   DidUpdateDetails: {
     newAuthenticationKey: "Option<DidVerificationKey>",
     newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
-    attestationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
-    delegationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
+    attestationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
+    delegationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
     publicKeysToRemove: "BTreeSet<KeyIdOf>",
-    serviceEndpointsUpdate: "DidFragmentUpdateAction<ServiceEndpoints>",
+    serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints",
   },
   DidDetails: {
     authenticationKey: "KeyIdOf",
@@ -661,11 +665,11 @@ export const types20: RegistryTypes = {
     newAuthenticationKey: "Option<DidVerificationKey>",
     // new
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
-    attestationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
-    delegationKeyUpdate: "DidFragmentUpdateAction<DidVerificationKey>",
+    attestationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
+    delegationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
     // new
     publicKeysToRemove: "DidVerificationKeysToRevoke",
-    serviceEndpointsUpdate: "DidFragmentUpdateAction<ServiceEndpoints>",
+    serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints",
   },
   DidDetails: {
     authenticationKey: "KeyIdOf",
@@ -683,16 +687,6 @@ export const types20: RegistryTypes = {
     // new
     urls: "BoundedVec<Url, MaxEndpointUrlsCount>",
     contentType: "ContentType",
-  },
-  // TODO: Check
-  HttpUrl: {
-    payload: "BoundedVec<u8, MaxUrlLength>",
-  },
-  FtpUrl: {
-    payload: "BoundedVec<u8, MaxUrlLength>",
-  },
-  IpfsUrl: {
-    payload: "BoundedVec<u8, MaxUrlLength>",
   },
   MaxUrlLength: "u32",
   MaxEndpointUrlsCount: "u32",
