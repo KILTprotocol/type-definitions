@@ -519,6 +519,9 @@ export const types17: RegistryTypes = {
   DelegationHierarchyDetails: {
     ctypeHash: "CtypeHashOf",
   },
+  DelegationStorageVersion: {
+    _enum: ["V1", "V2"],
+  },
 };
 
 export const types18: RegistryTypes = {
@@ -558,7 +561,7 @@ export const types19: RegistryTypes = {
     urls: "Vec<Url>",
     contentType: "ContentType",
   },
-  DidFragmentUpdateAction_ServicEndpoints: {
+  DidFragmentUpdateAction_ServiceEndpoints: {
     _enum: {
       Ignore: "Null",
       Change: "ServiceEndpoints",
@@ -628,6 +631,9 @@ export const types20: RegistryTypes = {
     total: "Balance",
   },
   MaxCollatorsPerDelegator: "u32",
+  StakingStorageVersion: {
+    _enum: ["V1_0_0", "V2_0_0", "V3_0_0", "V4"],
+  },
 
   // Attestation
   MaxDelegatedAttestations: "u32",
