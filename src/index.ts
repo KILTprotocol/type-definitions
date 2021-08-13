@@ -1,4 +1,7 @@
-import type { OverrideBundleDefinition, RegistryTypes } from "@polkadot/types/types";
+import type {
+  OverrideBundleDefinition,
+  RegistryTypes,
+} from "@polkadot/types/types";
 
 export const types8: RegistryTypes = {
   AccountInfo: "AccountInfoWithDualRefCount",
@@ -145,7 +148,12 @@ export const types9: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
+    _enum: [
+      "Authentication",
+      "CapabilityDelegation",
+      "CapabilityInvocation",
+      "AssertionMethod",
+    ],
   },
   DidSignature: {
     _enum: {
@@ -317,7 +325,12 @@ export const types10: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
+    _enum: [
+      "Authentication",
+      "CapabilityDelegation",
+      "CapabilityInvocation",
+      "AssertionMethod",
+    ],
   },
   DidSignature: {
     _enum: {
@@ -354,7 +367,11 @@ export const types10: RegistryTypes = {
     _enum: ["InvalidUrlEncoding", "InvalidUrlScheme"],
   },
   InputError: {
-    _enum: ["MaxKeyAgreementKeysLimitExceeded", "MaxVerificationKeysToRemoveLimitExceeded", "MaxUrlLengthExceeded"],
+    _enum: [
+      "MaxKeyAgreementKeysLimitExceeded",
+      "MaxVerificationKeysToRemoveLimitExceeded",
+      "MaxUrlLengthExceeded",
+    ],
   },
   DidPublicKeyDetails: {
     key: "DidPublicKey",
@@ -576,7 +593,7 @@ export const types19: RegistryTypes = {
     },
   },
   ContentType: {
-    _enum: ["ApplicationJson", "ApplicationJsonLd"],
+    _enum: ["application/json", "application/ld+json"],
   },
 
   // Updated types
@@ -652,27 +669,30 @@ export const types20: RegistryTypes = {
   MaxChildren: "u32",
 
   // DIDs
-  DidNewKeyAgreementKeys: "BoundedBTreeSet<DidEncryptionKey, MaxNewKeyAgreementKeys>",
+  DidNewKeyAgreementKeys:
+    "BoundedBTreeSet<DidEncryptionKey, MaxNewKeyAgreementKeys>",
   DidKeyAgreementKeys: "BoundedBTreeSet<KeyIdOf, MaxTotalKeyAgreementKeys>",
-  DidVerificationKeysToRevoke: "BoundedBTreeSet<KeyIdOf, MaxVerificationKeysToRevoke>",
+  DidVerificationKeysToRevoke:
+    "BoundedBTreeSet<KeyIdOf, MaxVerificationKeysToRevoke>",
   MaxNewKeyAgreementKeys: "u32",
   MaxTotalKeyAgreementKeys: "u32",
   MaxVerificationKeysToRevoke: "u32",
   MaxPublicKeysPerDid: "u32",
-  DidPublicKeyMap: "BoundedBTreeMap<KeyIdOf, DidPublicKeyDetails, MaxPublicKeysPerDid>",
+  DidPublicKeyMap:
+    "BoundedBTreeMap<KeyIdOf, DidPublicKeyDetails, MaxPublicKeysPerDid>",
   DidCreationDetails: {
     did: "DidIdentifierOf",
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
-    newAttestationKey: "Option<DidVerificationKey>",
-    newDelegationKey: "Option<DidVerificationKey>",
+    newAssertionMethodKey: "Option<DidVerificationKey>",
+    newCapabilityDelegationKey: "Option<DidVerificationKey>",
     newServiceEndpoints: "Option<ServiceEndpoints>",
   },
   DidUpdateDetails: {
     newAuthenticationKey: "Option<DidVerificationKey>",
     // new
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
-    attestationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
-    delegationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
+    assertionMethodKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
+    capabilityDelegationUpdate: "DidFragmentUpdateAction_DidVerificationKey",
     // new
     publicKeysToRemove: "DidVerificationKeysToRevoke",
     serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints",
@@ -681,8 +701,8 @@ export const types20: RegistryTypes = {
     authenticationKey: "KeyIdOf",
     // new
     keyAgreementKeys: "DidKeyAgreementKeys",
-    delegationKey: "Option<KeyIdOf>",
-    attestationKey: "Option<KeyIdOf>",
+    capabilityDelegationKey: "Option<KeyIdOf>",
+    assertionMethodKey: "Option<KeyIdOf>",
     // new
     publicKeys: "DidPublicKeyMap",
     serviceEndpoints: "Option<ServiceEndpoints>",
@@ -707,7 +727,7 @@ export const types20: RegistryTypes = {
       // new
       MaxPublicKeysPerDidKeyIdentifierExceeded: "Null",
       MaxTotalKeyAgreementKeysExceeded: "Null",
-      MaxOldAttestationKeysExceeded: "Null",
+      MaxOldAssertionMethodKeysExceeded: "Null",
     },
   },
 };
