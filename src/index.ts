@@ -507,14 +507,14 @@ export const types12: RegistryTypes = {
     _enum: {
       Ed25519: "[u8; 32]",
       Sr25519: "[u8; 32]",
-      EcdsaSecp256k1: "[u8; 33]",
+      Secp256k1: "[u8; 33]",
     },
   },
   DidSignature: {
     _enum: {
       Ed25519: "Ed25519Signature",
       Sr25519: "Sr25519Signature",
-      EcdsaSecp256k1: "EcdsaSignature",
+      "Ecdsa-Secp256k1": "EcdsaSignature",
     },
   },
 };
@@ -659,6 +659,7 @@ export const types20: RegistryTypes = {
   MaxClaims: "u32",
 
   // Delegation
+  DelegateSignatureTypeOf: "DidSignature",
   DelegationNode: {
     hierarchyRootId: "DelegationNodeIdOf",
     parent: "Option<DelegationNodeIdOf>",
