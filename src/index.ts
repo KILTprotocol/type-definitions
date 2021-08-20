@@ -620,14 +620,14 @@ export const types20: RegistryTypes = {
     id: "AccountId",
     stake: "Balance",
     // new
-    delegators: "OrderedSet<Stake, MaxDelegatorsPerCollator",
+    delegators: "OrderedSet<Stake, MaxDelegatorsPerCollator>",
     total: "Balance",
     state: "CollatorStatus",
   },
   MaxDelegatorsPerCollator: "u32",
   Delegator: {
     // new
-    delegations: "OrderedSet<Stake, MaxCollatorsPerDelegator",
+    delegations: "OrderedSet<Stake, MaxCollatorsPerDelegator>",
     total: "Balance",
   },
   MaxCollatorsPerDelegator: "u32",
