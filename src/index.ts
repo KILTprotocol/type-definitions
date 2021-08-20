@@ -751,6 +751,13 @@ export const types21: RegistryTypes = {
   },
   // removed
   DidUpdateDetails: undefined,
+  DidCreationDetails: {
+    did: "DidIdentifierOf",
+    newKeyAgreementKeys: "DidNewKeyAgreementKeys",
+    newAssertionMethodKey: "Option<DidVerificationKey>",
+    newCapabilityDelegationKey: "Option<DidVerificationKey>",
+    newServiceEndpoints: "Option<ServiceEndpoints>",
+  },
   DidDetails: {
     authenticationKey: "KeyIdOf",
     keyAgreementKeys: "DidKeyAgreementKeys",
@@ -763,6 +770,9 @@ export const types21: RegistryTypes = {
     lastTxCounter: "u64",
   },
   DelegateSignatureTypeOf: "DidSignature",
+  ContentType: {
+    _enum: ["application/json", "application/ld+json"],
+  },
 
   // fix: generics mostly don't work here, but OrderedSet is reduced to a Vec anyway
   OrderedSet: undefined,
