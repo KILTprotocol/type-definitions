@@ -1,4 +1,7 @@
-import type { OverrideBundleDefinition, RegistryTypes } from "@polkadot/types/types";
+import type {
+  OverrideBundleDefinition,
+  RegistryTypes,
+} from "@polkadot/types/types";
 
 export const types8: RegistryTypes = {
   AccountInfo: "AccountInfoWithDualRefCount",
@@ -145,7 +148,12 @@ export const types9: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
+    _enum: [
+      "Authentication",
+      "CapabilityDelegation",
+      "CapabilityInvocation",
+      "AssertionMethod",
+    ],
   },
   DidSignature: {
     _enum: {
@@ -317,7 +325,12 @@ export const types10: RegistryTypes = {
     },
   },
   DidVerificationKeyRelationship: {
-    _enum: ["Authentication", "CapabilityDelegation", "CapabilityInvocation", "AssertionMethod"],
+    _enum: [
+      "Authentication",
+      "CapabilityDelegation",
+      "CapabilityInvocation",
+      "AssertionMethod",
+    ],
   },
   DidSignature: {
     _enum: {
@@ -354,7 +367,11 @@ export const types10: RegistryTypes = {
     _enum: ["InvalidUrlEncoding", "InvalidUrlScheme"],
   },
   InputError: {
-    _enum: ["MaxKeyAgreementKeysLimitExceeded", "MaxVerificationKeysToRemoveLimitExceeded", "MaxUrlLengthExceeded"],
+    _enum: [
+      "MaxKeyAgreementKeysLimitExceeded",
+      "MaxVerificationKeysToRemoveLimitExceeded",
+      "MaxUrlLengthExceeded",
+    ],
   },
   DidPublicKeyDetails: {
     key: "DidPublicKey",
@@ -490,14 +507,14 @@ export const types12: RegistryTypes = {
     _enum: {
       Ed25519: "[u8; 32]",
       Sr25519: "[u8; 32]",
-      EcdsaSecp256k1: "[u8; 33]",
+      Secp256k1: "[u8; 33]",
     },
   },
   DidSignature: {
     _enum: {
       Ed25519: "Ed25519Signature",
       Sr25519: "Sr25519Signature",
-      EcdsaSecp256k1: "EcdsaSignature",
+      "Ecdsa-Secp256k1": "EcdsaSignature",
     },
   },
 };
@@ -652,14 +669,17 @@ export const types20: RegistryTypes = {
   MaxChildren: "u32",
 
   // DIDs
-  DidNewKeyAgreementKeys: "BoundedBTreeSet<DidEncryptionKey, MaxNewKeyAgreementKeys>",
+  DidNewKeyAgreementKeys:
+    "BoundedBTreeSet<DidEncryptionKey, MaxNewKeyAgreementKeys>",
   DidKeyAgreementKeys: "BoundedBTreeSet<KeyIdOf, MaxTotalKeyAgreementKeys>",
-  DidVerificationKeysToRevoke: "BoundedBTreeSet<KeyIdOf, MaxVerificationKeysToRevoke>",
+  DidVerificationKeysToRevoke:
+    "BoundedBTreeSet<KeyIdOf, MaxVerificationKeysToRevoke>",
   MaxNewKeyAgreementKeys: "u32",
   MaxTotalKeyAgreementKeys: "u32",
   MaxVerificationKeysToRevoke: "u32",
   MaxPublicKeysPerDid: "u32",
-  DidPublicKeyMap: "BoundedBTreeMap<KeyIdOf, DidPublicKeyDetails, MaxPublicKeysPerDid>",
+  DidPublicKeyMap:
+    "BoundedBTreeMap<KeyIdOf, DidPublicKeyDetails, MaxPublicKeysPerDid>",
   DidCreationDetails: {
     did: "DidIdentifierOf",
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
@@ -712,6 +732,65 @@ export const types20: RegistryTypes = {
   },
 };
 
+export const types21: RegistryTypes = {
+  ...types20,
+
+  StorageError: {
+    _enum: {
+      DidAlreadyPresent: "Null",
+      DidNotPresent: "Null",
+      DidKeyNotPresent: "DidVerificationKeyRelationship",
+      VerificationKeyNotPresent: "Null",
+      CurrentlyActiveKey: "Null",
+      MaxTxCounterValue: "Null",
+      MaxPublicKeysPerDidKeyIdentifierExceeded: "Null",
+      // renamed
+      MaxTotalKeyAgreementKeysExceeded: "Null",
+      MaxOldAttestationKeysExceeded: "Null",
+    },
+  },
+  // removed
+  DidUpdateDetails: undefined,
+  DidCreationDetails: {
+    did: "DidIdentifierOf",
+    newKeyAgreementKeys: "DidNewKeyAgreementKeys",
+    newAssertionMethodKey: "Option<DidVerificationKey>",
+    newCapabilityDelegationKey: "Option<DidVerificationKey>",
+    newServiceEndpoints: "Option<ServiceEndpoints>",
+  },
+  DidDetails: {
+    authenticationKey: "KeyIdOf",
+    keyAgreementKeys: "DidKeyAgreementKeys",
+    // renamed
+    capabilityDelegationKey: "Option<KeyIdOf>",
+    // renamed
+    assertionMethodKey: "Option<KeyIdOf>",
+    publicKeys: "DidPublicKeyMap",
+    serviceEndpoints: "Option<ServiceEndpoints>",
+    lastTxCounter: "u64",
+  },
+  DelegateSignatureTypeOf: "DidSignature",
+  ContentType: {
+    _enum: ["application/json", "application/ld+json"],
+  },
+
+  // fix: generics mostly don't work here, but OrderedSet is reduced to a Vec anyway
+  OrderedSet: undefined,
+  Collator: {
+    id: "AccountId",
+    stake: "Balance",
+    // fix
+    delegators: "Vec<Stake>",
+    total: "Balance",
+    state: "CollatorStatus",
+  },
+  Delegator: {
+    // fix
+    delegations: "Vec<Stake>",
+    total: "Balance",
+  },
+};
+
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
@@ -743,8 +822,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types19,
     },
     {
-      minmax: [20, undefined],
+      minmax: [20, 20],
       types: types20,
+    },
+    {
+      minmax: [21, undefined],
+      types: types21,
     },
   ],
 };
