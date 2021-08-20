@@ -593,7 +593,7 @@ export const types19: RegistryTypes = {
     },
   },
   ContentType: {
-    _enum: ["application/json", "application/ld+json"],
+    _enum: ["ApplicationJson", "ApplicationJsonLd"],
   },
 
   // Updated types
@@ -659,7 +659,6 @@ export const types20: RegistryTypes = {
   MaxClaims: "u32",
 
   // Delegation
-  DelegateSignatureTypeOf: "DidSignature",
   DelegationNode: {
     hierarchyRootId: "DelegationNodeIdOf",
     parent: "Option<DelegationNodeIdOf>",
@@ -684,16 +683,16 @@ export const types20: RegistryTypes = {
   DidCreationDetails: {
     did: "DidIdentifierOf",
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
-    newAssertionMethodKey: "Option<DidVerificationKey>",
-    newCapabilityDelegationKey: "Option<DidVerificationKey>",
+    newAttestationKey: "Option<DidVerificationKey>",
+    newDelegationKey: "Option<DidVerificationKey>",
     newServiceEndpoints: "Option<ServiceEndpoints>",
   },
   DidUpdateDetails: {
     newAuthenticationKey: "Option<DidVerificationKey>",
     // new
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
-    assertionMethodKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
-    capabilityDelegationUpdate: "DidFragmentUpdateAction_DidVerificationKey",
+    attestationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
+    delegationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
     // new
     publicKeysToRemove: "DidVerificationKeysToRevoke",
     serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints",
@@ -702,8 +701,8 @@ export const types20: RegistryTypes = {
     authenticationKey: "KeyIdOf",
     // new
     keyAgreementKeys: "DidKeyAgreementKeys",
-    capabilityDelegationKey: "Option<KeyIdOf>",
-    assertionMethodKey: "Option<KeyIdOf>",
+    delegationKey: "Option<KeyIdOf>",
+    attestationKey: "Option<KeyIdOf>",
     // new
     publicKeys: "DidPublicKeyMap",
     serviceEndpoints: "Option<ServiceEndpoints>",
@@ -728,8 +727,57 @@ export const types20: RegistryTypes = {
       // new
       MaxPublicKeysPerDidKeyIdentifierExceeded: "Null",
       MaxTotalKeyAgreementKeysExceeded: "Null",
-      MaxOldAssertionMethodKeysExceeded: "Null",
+      MaxOldAttestationKeysExceeded: "Null",
     },
+  },
+};
+
+export const types21: RegistryTypes = {
+  ...types20,
+
+  StorageError: {
+    _enum: {
+      DidAlreadyPresent: "Null",
+      DidNotPresent: "Null",
+      DidKeyNotPresent: "DidVerificationKeyRelationship",
+      VerificationKeyNotPresent: "Null",
+      CurrentlyActiveKey: "Null",
+      MaxTxCounterValue: "Null",
+      MaxPublicKeysPerDidKeyIdentifierExceeded: "Null",
+      // renamed
+      MaxTotalKeyAgreementKeysExceeded: "Null",
+      MaxOldAttestationKeysExceeded: "Null",
+    },
+  },
+  // removed
+  DidUpdateDetails: undefined,
+  DidDetails: {
+    authenticationKey: "KeyIdOf",
+    keyAgreementKeys: "DidKeyAgreementKeys",
+    // renamed
+    capabilityDelegationKey: "Option<KeyIdOf>",
+    // renamed
+    assertionMethodKey: "Option<KeyIdOf>",
+    publicKeys: "DidPublicKeyMap",
+    serviceEndpoints: "Option<ServiceEndpoints>",
+    lastTxCounter: "u64",
+  },
+  DelegateSignatureTypeOf: "DidSignature",
+
+  // fix: generics mostly don't work here, but OrderedSet is reduced to a Vec anyway
+  OrderedSet: undefined,
+  Collator: {
+    id: "AccountId",
+    stake: "Balance",
+    // fix
+    delegators: "Vec<Stake>",
+    total: "Balance",
+    state: "CollatorStatus",
+  },
+  Delegator: {
+    // fix
+    delegations: "Vec<Stake>",
+    total: "Balance",
   },
 };
 
@@ -764,8 +812,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types19,
     },
     {
-      minmax: [20, undefined],
+      minmax: [20, 20],
       types: types20,
+    },
+    {
+      minmax: [21, undefined],
+      types: types21,
     },
   ],
 };
