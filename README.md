@@ -4,6 +4,10 @@ KILT's type definitions for Polkadot.js
 
 ## example usage
 
+Depending on which chain you connect to, the spec name changes.
+You can check the spec name using `api.runtimeVersion.specName`.
+The polkadot.js API will select the correct types matching the spec name of the chain to the keys inside the `spec` object.
+
 
 ```js
 const {
