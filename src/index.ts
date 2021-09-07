@@ -791,6 +791,31 @@ export const types21: RegistryTypes = {
   },
 };
 
+export const types23: RegistryTypes = {
+  ...types21,
+  MaxCollatorCandidates: undefined,
+  MinSelectedCandidates: undefined,
+  MinCollators: "u32",
+  MaxTopCandidates: "u32",
+
+  // Renamed collator to candidate since they are not always collators (most of them are candidates)
+  Collator: undefined,
+  CollatorStatus: undefined,
+  Candidate: {
+    id: "AccountId",
+    stake: "Balance",
+    delegators: "Vec<Stake>",
+    total: "Balance",
+    // renamed from state to status to be consistent
+    status: "CandidateStatus",
+  },
+  CandidateStatus: {
+    _enum: {
+      Active: "Null",
+      Leaving: "SessionIndex",
+    },
+  },
+};
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
@@ -826,8 +851,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types20,
     },
     {
-      minmax: [21, undefined],
+      minmax: [21, 22],
       types: types21,
+    },
+    {
+      minmax: [23, undefined],
+      types: types23,
     },
   ],
 };
