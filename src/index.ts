@@ -816,6 +816,7 @@ export const types23: RegistryTypes = {
     },
   },
 };
+
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
