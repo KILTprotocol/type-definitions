@@ -68,7 +68,7 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types23,
     },
     {
-      minmax: [23, 24],
+      minmax: [23, undefined],
       types: types24,
     },
   ],
