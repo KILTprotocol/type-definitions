@@ -11,6 +11,17 @@ import { types20 } from "./types_20";
 import { types21 } from "./types_21";
 import { types23 } from "./types_23";
 
+export { types8 } from "./types_8";
+export { types9 } from "./types_9";
+export { types10 } from "./types_10";
+export { types12 } from "./types_12";
+export { types17 } from "./types_17";
+export { types18 } from "./types_18";
+export { types19 } from "./types_19";
+export { types20 } from "./types_20";
+export { types21 } from "./types_21";
+export { types23 } from "./types_23";
+
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
