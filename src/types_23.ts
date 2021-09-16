@@ -25,10 +25,4 @@ export const types23: RegistryTypes = {
       Leaving: "SessionIndex",
     },
   },
-  DidAuthorizedCallOperation: {
-    did: "DidIdentifierOf",
-    txCounter: "u64",
-    call: "DidCallableOf",
-    submitter: "AccountId",
-  },
 };
