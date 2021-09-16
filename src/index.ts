@@ -23,6 +23,7 @@ export {
   types20,
   types21,
   types23,
+  types24,
 };
 
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
