@@ -25,4 +25,7 @@ export const types23: RegistryTypes = {
       Leaving: "SessionIndex",
     },
   },
+  StakingStorageVersion: {
+    _enum: ["V1_0_0", "V2_0_0", "V3_0_0", "V4", "V5"],
+  },
 };
