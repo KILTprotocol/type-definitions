@@ -10,6 +10,7 @@ import { types19 } from "./types_19";
 import { types20 } from "./types_20";
 import { types21 } from "./types_21";
 import { types23 } from "./types_23";
+import { types25 } from "./types_25";
 
 export {
   types8,
@@ -22,6 +23,7 @@ export {
   types20,
   types21,
   types23,
+  types25,
 };
 
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
@@ -63,8 +65,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types21,
     },
     {
-      minmax: [23, undefined],
+      minmax: [23, 24],
       types: types23,
+    },
+    {
+      minmax: [25, undefined],
+      types: types25,
     },
   ],
 };
