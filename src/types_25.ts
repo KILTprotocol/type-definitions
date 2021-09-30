@@ -9,4 +9,15 @@ export const types25: RegistryTypes = {
     call: "DidCallableOf",
     submitter: "AccountId",
   },
+  Deposit: {
+    owner: "AccountId",
+    amount: "Balance",
+  },
+  AttestationDetails: {
+    ctypeHash: "CtypeHashOf",
+    attester: "AttesterOf",
+    delegationId: "Option<DelegationNodeIdOf>",
+    revoked: "bool",
+    deposit: "Deposit",
+  },
 };
