@@ -2,7 +2,7 @@
 
 KILT's type definitions for Polkadot.js 
 
-## example usage
+## Example usage
 
 Depending on which chain you connect to, the spec name changes.
 You can check the spec name using `api.runtimeVersion.specName`.
@@ -27,3 +27,7 @@ const api = await ApiPromise.create({
 
 console.log(`Spec: ${api.runtimeVersion.specName.toString()}`)
 ```
+
+## Print the last types configured
+
+To generate the latest type, run `yarn run generate-latest-types` from the project root. It will generate the types version + the types definition JSON and store it in `out/latest-types`.
