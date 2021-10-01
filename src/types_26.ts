@@ -3,6 +3,8 @@ import { types25 } from "./types_25";
 
 export const types26: RegistryTypes = {
   ...types25,
+
+  // Add deposit for attestations
   Deposit: {
     owner: "AccountId",
     amount: "Balance",
@@ -15,6 +17,7 @@ export const types26: RegistryTypes = {
     // Added
     deposit: "Deposit",
   },
+
   DidAuthorizedCallOperation: {
     did: "DidIdentifierOf",
     txCounter: "u64",
@@ -23,4 +26,79 @@ export const types26: RegistryTypes = {
     blockNumber: "BlockNumber",
     submitter: "AccountId",
   },
+
+  // Remove serviceEndpoints
+  DidDetails: {
+    authenticationKey: "KeyIdOf",
+    keyAgreementKeys: "DidKeyAgreementKeys",
+    capabilityDelegationKey: "Option<KeyIdOf>",
+    assertionMethodKey: "Option<KeyIdOf>",
+    publicKeys: "DidPublicKeyMap",
+    lastTxCounter: "u64",
+  },
+
+  // Remove newServiceEndpoints
+  DidCreationDetails: {
+    did: "DidIdentifierOf",
+    newKeyAgreementKeys: "DidNewKeyAgreementKeys",
+    newAssertionMethodKey: "Option<DidVerificationKey>",
+    newCapabilityDelegationKey: "Option<DidVerificationKey>",
+  },
+
+  // Remove UrlError
+  DidError: {
+    _enum: {
+      StorageError: "StorageError",
+      SignatureError: "SignatureError",
+      InputError: "InputError",
+      InternalError: "Null",
+    },
+  },
+
+  // Remove MaxUrlLengthExceeded
+  InputError: {
+    _enum: [
+      "MaxKeyAgreementKeysLimitExceeded",
+      "MaxVerificationKeysToRemoveLimitExceeded",
+    ],
+  },
+
+  // Remove deprecated types
+  ServiceEndpoints: undefined,
+  UrlError: undefined,
+  ContentType: undefined,
+  Url: undefined,
+  HttpUrl: undefined,
+  FtpUrl: undefined,
+  IpfsUrl: undefined,
+  MaxEndpointUrlsCount: undefined,
+  MaxUrlLength: undefined,
+
+  // Cleaning/fixing up outdated types
+  DelegationRoot: undefined,
+  StorageError: {
+    _enum: {
+      DidAlreadyPresent: "Null",
+      DidNotPresent: "Null",
+      DidKeyNotPresent: "DidVerificationKeyRelationship",
+      KeyNotPresent: "Null",
+      CurrentlyActiveKey: "Null",
+      MaxPublicKeysPerDidExceeded: "Null",
+      MaxTotalKeyAgreementKeysExceeded: "Null",
+      DidAlreadyDeleted: "Null"
+    }
+  },
+  SignatureError: {
+    _enum: [
+        "InvalidSignatureFormat",
+        "InvalidSignature",
+        "InvalidNonce",
+        "TransactionExpired",
+    ]
+  },
+  
+  // Add V3
+  DidStorageVersion: {
+    _enum: ["V1", "V2", "V3"]
+  }
 };

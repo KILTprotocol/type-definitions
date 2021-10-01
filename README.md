@@ -2,7 +2,7 @@
 
 KILT's type definitions for Polkadot.js 
 
-## example usage
+## Example usage
 
 Depending on which chain you connect to, the spec name changes.
 You can check the spec name using `api.runtimeVersion.specName`.
