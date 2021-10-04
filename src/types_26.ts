@@ -14,4 +14,12 @@ export const types26: RegistryTypes = {
     revoked: "bool",
     deposit: "Deposit",
   },
+  DidAuthorizedCallOperation: {
+    did: "DidIdentifierOf",
+    txCounter: "u64",
+    call: "DidCallableOf",
+    // Added
+    blockNumber: "BlockNumber",
+    submitter: "AccountId",
+  },
 };
