@@ -1,12 +1,32 @@
 import { typeBundleForPolkadot } from '../src'
+import { writeFile, mkdir, rmdir } from 'fs/promises'
+import { resolve as resolvePath } from 'path'
 
-const bundleTypes = typeBundleForPolkadot.types
-if (!bundleTypes || !bundleTypes.length) {
-    console.log("No types were defined.")
-} else {
-    const lastDeclaredTypes = bundleTypes[bundleTypes.length - 1]
-    console.log("Types minmax version:")
-    console.log(JSON.stringify(lastDeclaredTypes.minmax, undefined, 2))
-    console.log("\nTypes definition:")
-    console.log(JSON.stringify(lastDeclaredTypes.types, undefined, 2))
+async function main() {
+    const bundleTypes = typeBundleForPolkadot.types
+
+    const generationPromises = bundleTypes.map(async (type) => {
+        const startingVersion = type.minmax[0]
+        const endingVersion = type.minmax[1]
+        if (typeof startingVersion === 'undefined') {
+            throw new Error('No min version specified for type. Aborting.')
+        }
+        const fileName = `types${startingVersion}-${endingVersion || ''}.json`
+        const dirPath = resolvePath(__dirname, '..', 'types')
+
+        console.log(dirPath)
+
+        // 1. Remove any directory leftover
+        await rmdir(dirPath, { recursive: true })
+
+        // 2. Create the expected directory
+        await mkdir(dirPath, { recursive: true })
+    
+        // 3. Write each type definition within the directory
+        return writeFile(resolvePath(dirPath, fileName), JSON.stringify(type.types, undefined, 2), {  })
+    })
+
+    await Promise.all(generationPromises)
 }
+
+main().then(() => console.log("Type generation complete!"))

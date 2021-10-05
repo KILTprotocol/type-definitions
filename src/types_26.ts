@@ -97,34 +97,8 @@ export const types26: RegistryTypes = {
     ]
   },
   
-  // Fix enum to u8 mapping
-  DelegationStorageVersion: {
-    _enum: {
-      None: 255,
-      V1: 0,
-      V2: 1
-    }
-  },
-  
-  // Fix enum to u8 mapping
+  // Add V3
   DidStorageVersion: {
-    _enum: {
-      None: 255,
-      V1: 0,
-      V2: 1,
-      V3: 2
-    }
-  },
-
-  // Fix enum to u8 mapping
-  StakingStorageVersion: {
-    _enum: {
-      None: 255,
-      V1_0_0: 0,
-      V2_0_0: 1,
-      V3_0_0: 2,
-      V4: 3,
-      V5: 4,
-    }
+    _enum: ["V1", "V2", "V3"]
   }
 };

@@ -9,7 +9,7 @@
   "license": "BSD-4-Clause",
   "scripts": {
     "build": "tsc",
-    "generate-latest-types": "mkdir -p out && ts-node scripts/generate-latest-types.ts > out/latest-types"
+    "generate-latest-types": "ts-node scripts/generate-latest-types.ts"
   },
   "publishConfig": {
     "access": "public"
