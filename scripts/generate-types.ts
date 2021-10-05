@@ -14,15 +14,16 @@ async function main() {
         const fileName = `types${startingVersion}-${endingVersion || ''}.json`
         const dirPath = resolvePath(__dirname, '..', 'types')
 
-        console.log(dirPath)
-
         // 1. Remove any directory leftover
         await rmdir(dirPath, { recursive: true })
 
         // 2. Create the expected directory
         await mkdir(dirPath, { recursive: true })
-    
+
         // 3. Write each type definition within the directory
+        const filePath = resolvePath(dirPath, fileName)
+        console.log(`Writing type ${filePath}`)
+    
         return writeFile(resolvePath(dirPath, fileName), JSON.stringify(type.types, undefined, 2), {  })
     })
 
