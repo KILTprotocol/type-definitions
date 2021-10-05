@@ -12,6 +12,7 @@ export const types26: RegistryTypes = {
     attester: "AttesterOf",
     delegationId: "Option<DelegationNodeIdOf>",
     revoked: "bool",
+    // Added
     deposit: "Deposit",
   },
   DidAuthorizedCallOperation: {
