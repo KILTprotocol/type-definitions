@@ -24,7 +24,7 @@ async function main() {
         const filePath = resolvePath(dirPath, fileName)
         console.log(`Writing type ${filePath}`)
     
-        return writeFile(resolvePath(dirPath, fileName), JSON.stringify(type.types, undefined, 2), {  })
+        return writeFile(filePath, JSON.stringify(type.types, undefined, 2), {  })
     })
 
     await Promise.all(generationPromises)
