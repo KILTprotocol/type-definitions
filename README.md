@@ -28,6 +28,6 @@ const api = await ApiPromise.create({
 console.log(`Spec: ${api.runtimeVersion.specName.toString()}`)
 ```
 
-## Generate the last types configured
+## Generate the type definitions
 
-To generate the latest type, run `yarn run generate-latest-types` from the project root. It will generate the types version + the types definition JSON and store it in `out/latest-types`.
+To generate the type definitions, run `yarn generate-types` from the project root. It will generate all the type definitions and save them in the `types` directory each with the name `types/types<min_version>-<max_version>.json`, for examples `types/types23-24.json`.
