@@ -1,7 +1,7 @@
 import { typeBundleForPolkadot } from '../src'
 
 const bundleTypes = typeBundleForPolkadot.types
-if (!bundleTypes) {
+if (!bundleTypes || !bundleTypes.length) {
     console.log("No types were defined.")
 } else {
     const lastDeclaredTypes = bundleTypes[bundleTypes.length - 1]
