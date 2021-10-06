@@ -57,10 +57,7 @@ export const types26: RegistryTypes = {
 
   // Remove MaxUrlLengthExceeded
   InputError: {
-    _enum: [
-      "MaxKeyAgreementKeysLimitExceeded",
-      "MaxVerificationKeysToRemoveLimitExceeded",
-    ],
+    _enum: ["MaxKeyAgreementKeysLimitExceeded", "MaxVerificationKeysToRemoveLimitExceeded"],
   },
 
   // Remove deprecated types
@@ -85,20 +82,23 @@ export const types26: RegistryTypes = {
       CurrentlyActiveKey: "Null",
       MaxPublicKeysPerDidExceeded: "Null",
       MaxTotalKeyAgreementKeysExceeded: "Null",
-      DidAlreadyDeleted: "Null"
-    }
+      DidAlreadyDeleted: "Null",
+    },
   },
   SignatureError: {
-    _enum: [
-        "InvalidSignatureFormat",
-        "InvalidSignature",
-        "InvalidNonce",
-        "TransactionExpired",
-    ]
+    _enum: ["InvalidSignatureFormat", "InvalidSignature", "InvalidNonce", "TransactionExpired"],
   },
-  
+  DelegationNode: {
+    hierarchyRootId: "DelegationNodeIdOf",
+    parent: "Option<DelegationNodeIdOf>",
+    children: "BoundedBTreeSet<DelegationNodeIdOf, MaxChildren>",
+    details: "DelegationDetails",
+    // new
+    deposit: "Deposit",
+  },
+
   // Add V3
   DidStorageVersion: {
-    _enum: ["V1", "V2", "V3"]
-  }
+    _enum: ["V1", "V2", "V3"],
+  },
 };
