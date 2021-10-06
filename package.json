@@ -8,7 +8,8 @@
   ],
   "license": "BSD-4-Clause",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "generate-types": "ts-node scripts/generate-types.ts"
   },
   "publishConfig": {
     "access": "public"
@@ -17,6 +18,7 @@
   "homepage": "https://github.com/KILTprotocol/type-definitions#readme",
   "devDependencies": {
     "@polkadot/types": "^5.3.1",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },
   "version": "0.1.19"
