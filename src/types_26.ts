@@ -35,6 +35,8 @@ export const types26: RegistryTypes = {
     assertionMethodKey: "Option<KeyIdOf>",
     publicKeys: "DidPublicKeyMap",
     lastTxCounter: "u64",
+    // Added
+    deposit: "Deposit",
   },
 
   // Remove newServiceEndpoints
