@@ -35,11 +35,15 @@ export const types26: RegistryTypes = {
     assertionMethodKey: "Option<KeyIdOf>",
     publicKeys: "DidPublicKeyMap",
     lastTxCounter: "u64",
+    // Added
+    deposit: "Deposit",
   },
 
   // Remove newServiceEndpoints
   DidCreationDetails: {
     did: "DidIdentifierOf",
+    // Added
+    submitter: "AccountId",
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
     newAssertionMethodKey: "Option<DidVerificationKey>",
     newCapabilityDelegationKey: "Option<DidVerificationKey>",
