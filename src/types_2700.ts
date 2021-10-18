@@ -1,7 +1,7 @@
 import type { RegistryTypes } from "@polkadot/types/types";
 import { types25 } from "./types_25";
 
-export const types26: RegistryTypes = {
+export const types2700: RegistryTypes = {
   ...types25,
 
   // Add deposit for attestations
