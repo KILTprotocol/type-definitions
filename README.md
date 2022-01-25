@@ -16,7 +16,7 @@ const {
 const { ApiPromise, WsProvider } = require('@polkadot/api')
 
 const api = await ApiPromise.create({
-    provider: new WsProvider('wss://peregrine.kilt.io'),
+    provider: new WsProvider('wss://peregrine.kilt.io/parachain-public-ws'),
     typesBundle: {
         spec: {
             'mashnet-node': typeBundleForPolkadot,
