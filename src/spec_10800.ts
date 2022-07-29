@@ -2,11 +2,11 @@ import type {
   DefinitionRpc,
   DefinitionRpcSub,
   RegistryTypes,
-} from "@polkadot/types/types";
+} from "@polkadot/types/types"
 
-export const SPEC_10700: {
-  types: RegistryTypes;
-  rpc: Record<string, Record<string, DefinitionRpc | DefinitionRpcSub>>;
+export const SPEC_10800: {
+  types: RegistryTypes
+  rpc: Record<string, Record<string, DefinitionRpc | DefinitionRpcSub>>
 } = {
   types: {
     RpcServiceEndpoint: {
@@ -34,7 +34,7 @@ export const SPEC_10700: {
   rpc: {
     did: {
       queryByWeb3Name: {
-        description: "Query a all DID information for the given web3name",
+        description: "Query all DID information for the given web3name.",
         params: [
           { name: "web3name", type: "String" },
           {
@@ -47,7 +47,7 @@ export const SPEC_10700: {
       },
       queryByAccount: {
         description:
-          "Query a all DID information for the given blockchain account",
+          "Query all DID information for the given blockchain account.",
         params: [
           { name: "account", type: "AccountId" },
           {
@@ -59,7 +59,7 @@ export const SPEC_10700: {
         type: "RpcDidDocument",
       },
       query: {
-        description: "Query a all DID information",
+        description: "Query all DID information for the given identifier.",
         params: [
           {
             name: "did",
@@ -75,4 +75,4 @@ export const SPEC_10700: {
       },
     },
   },
-};
+}
