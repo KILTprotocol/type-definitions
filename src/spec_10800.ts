@@ -34,7 +34,7 @@ export const SPEC_10800: {
   rpc: {
     did: {
       queryByWeb3Name: {
-        description: "Query a all DID information for the given web3name",
+        description: "Query all DID information for the given web3name.",
         params: [
           { name: "web3name", type: "String" },
           {
@@ -47,7 +47,7 @@ export const SPEC_10800: {
       },
       queryByAccount: {
         description:
-          "Query a all DID information for the given blockchain account",
+          "Query all DID information for the given blockchain account.",
         params: [
           { name: "account", type: "AccountId" },
           {
@@ -59,7 +59,7 @@ export const SPEC_10800: {
         type: "RpcDidDocument",
       },
       query: {
-        description: "Query a all DID information",
+        description: "Query all DID information for the given DID identifier.",
         params: [
           {
             name: "did",
