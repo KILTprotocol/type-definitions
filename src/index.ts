@@ -15,6 +15,7 @@ import { types2700 } from "./types_2700"
 import { types10700 } from "./types_10700"
 
 import runtime from "./runtime"
+import rpc from "./rpc"
 
 // Export type definitions
 export {
@@ -36,6 +37,9 @@ export {
 
 // Export runtime APIs definitions
 export { runtime }
+
+// Export custom RPC definitions
+export { rpc }
 
 // Export complete package
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
@@ -93,5 +97,6 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types10700,
     },
   ],
-  runtime: runtime
+  runtime: runtime,
+  rpc: rpc
 }

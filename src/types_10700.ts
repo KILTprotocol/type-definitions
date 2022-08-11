@@ -25,4 +25,12 @@ export const types10700: RegistryTypes = {
     lastTxCounter: "BlockNumber",
     deposit: "KiltSupportDeposit<AccountId32, Balance>"
   },
+
+  // Public credentials RPC
+  PublicCredentialFilter: {
+    _enum: {
+      ctypeHash: "Hash",
+      attester: "DidIdentifier",
+    }
+  }
 }
