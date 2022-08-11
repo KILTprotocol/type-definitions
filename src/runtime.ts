@@ -44,7 +44,7 @@ const runtime: DefinitionsCall = {
     {
       methods: {
         get_credential: {
-          description: "Test",
+          description: "Return the credential details for the provided credential ID, if found.",
           params: [
             {
               name: "credentialId",
@@ -54,7 +54,7 @@ const runtime: DefinitionsCall = {
           type: "Option<PublicCredentialsCredentialsCredentialEntry>"
         },
         get_credentials: {
-          description: "Test",
+          description: "Return all the credentials issued to the provided subject, optionally filtering with the provided logic.",
           params: [
             {
               name: "subject",
