@@ -7,7 +7,7 @@ const runtime: DefinitionsCall = {
     {
       methods: {
         query_did_by_w3n: {
-          description: "Test",
+          description: "Return the information relative to the owner of the provided web3name, if any.",
           params: [
             {
               name: "name",
@@ -17,7 +17,7 @@ const runtime: DefinitionsCall = {
           type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, PalletDidLookupLinkableAccountLinkableAccountId, Balance, Key, BlockNumber>>"
         },
         query_did_by_account_id: {
-          description: "Test",
+          description: "Return the information relative to the DID to which the provided account is linked, if any.",
           params: [
             {
               name: "name",
@@ -27,7 +27,7 @@ const runtime: DefinitionsCall = {
           type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, PalletDidLookupLinkableAccountLinkableAccountId, Balance, Key, BlockNumber>>"
         },
         query_did: {
-          description: "Test",
+          description: "Return the information relative to the owner of the provided DID, if present.",
           params: [
             {
               name: "did",
