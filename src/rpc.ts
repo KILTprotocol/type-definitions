@@ -5,7 +5,7 @@ import type {
 const rpc: Record<string, Record<string, DefinitionRpc | DefinitionRpcSub>> = {
   credentials: {
     getCredential: {
-      description: "Test",
+      description: "Return the credential details for the provided credential ID, if found.",
       params: [
         {
           name: "credential_id",
