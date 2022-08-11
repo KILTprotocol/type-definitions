@@ -40,6 +40,33 @@ const runtime: DefinitionsCall = {
       version: 1
     }
   ],
+  PublicCredentialsApi: [
+    {
+      methods: {
+        get_credential: {
+          description: "Test",
+          params: [
+            {
+              name: "credentialId",
+              type: "Hash",
+            },
+          ],
+          type: "Option<PublicCredentialsCredentialsCredentialEntry>"
+        },
+        get_credentials: {
+          description: "Test",
+          params: [
+            {
+              name: "subject",
+              type: "RuntimeCommonAssetsAssetDid",
+            },
+          ],
+          type: "Vec<(Hash, PublicCredentialsCredentialsCredentialEntry)>"
+        },
+      },
+      version: 1
+    }
+  ],
 }
 
 export default runtime
