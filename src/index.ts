@@ -16,6 +16,7 @@ import { types10700 } from "./types_10700"
 
 import runtime from "./runtime"
 
+// Export type definitions
 export {
   types8,
   types9,
@@ -33,6 +34,10 @@ export {
   types10700 as latest,
 }
 
+// Export runtime APIs definitions
+export { runtime }
+
+// Export complete package
 export const typeBundleForPolkadot: OverrideBundleDefinition = {
   types: [
     {
