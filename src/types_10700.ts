@@ -30,7 +30,7 @@ export const types10700: RegistryTypes = {
   PublicCredentialFilter: {
     _enum: {
       ctypeHash: "Hash",
-      attester: "DidIdentifier",
+      attester: "AccountId32",
     }
   }
 }
