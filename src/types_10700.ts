@@ -73,13 +73,5 @@ export const types10700: RegistryTypes = {
       // Raw public key
       X25519: "[u8; 32]",
     },
-  },
-
-  // Public credentials RPC
-  PublicCredentialFilter: {
-    _enum: {
-      ctypeHash: "Hash",
-      attester: "AccountId32",
-    }
   }
 }

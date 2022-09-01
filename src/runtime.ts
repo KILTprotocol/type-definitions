@@ -39,34 +39,7 @@ const runtime: DefinitionsCall = {
       },
       version: 1
     }
-  ],
-  PublicCredentialsApi: [
-    {
-      methods: {
-        get_credential: {
-          description: "Return the credential details for the provided credential ID, if found.",
-          params: [
-            {
-              name: "credentialId",
-              type: "Hash",
-            },
-          ],
-          type: "Option<PublicCredentialsCredentialsCredentialEntry>"
-        },
-        get_credentials: {
-          description: "Return all the credentials issued to the provided subject, optionally filtering with the provided logic.",
-          params: [
-            {
-              name: "subject",
-              type: "RuntimeCommonAssetsAssetDid",
-            },
-          ],
-          type: "Vec<(Hash, PublicCredentialsCredentialsCredentialEntry)>"
-        },
-      },
-      version: 1
-    }
-  ],
+  ]
 }
 
 export default runtime
