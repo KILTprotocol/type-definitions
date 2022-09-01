@@ -6,7 +6,7 @@ export const types10700: RegistryTypes = {
   // DID state_call
   RawDidLinkedInfo: {
     identifier: "AccountId32",
-    accounts: "Vec<PalletDidLookupLinkableAccountLinkableAccountId>",
+    accounts: "Vec<AccountId32>",
     w3n: "Option<Text>",
     serviceEndpoints: "Vec<RawServiceEndpoints>",
     details: "RawDidDetails",
@@ -29,7 +29,7 @@ export const types10700: RegistryTypes = {
   // DID RPC
   DidLinkedInfo: {
     identifier: "AccountId32",
-    accounts: "Vec<PalletDidLookupLinkableAccountLinkableAccountId>",
+    accounts: "Vec<AccountId32>",
     w3n: "Option<String>",
     serviceEndpoints: "Vec<ServiceEndpoint>",
     details: "DidDetails"

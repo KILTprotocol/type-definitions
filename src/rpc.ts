@@ -8,7 +8,7 @@ const rpc: Record<string, Record<string, DefinitionRpc | DefinitionRpcSub>> = {
       description: "Return the DID information linked to the provided DID identifier, if found.",
       params: [
         {
-          name: "account",
+          name: "did",
           type: "AccountId32",
         },
         {
@@ -23,7 +23,7 @@ const rpc: Record<string, Record<string, DefinitionRpc | DefinitionRpcSub>> = {
       description: "Return the DID information linked to the provided web3name, if found.",
       params: [
         {
-          name: "web3Name",
+          name: "name",
           type: "String",
         },
         {
@@ -39,7 +39,7 @@ const rpc: Record<string, Record<string, DefinitionRpc | DefinitionRpcSub>> = {
       params: [
         {
           name: "account",
-          type: "PalletDidLookupLinkableAccountLinkableAccountId",
+          type: "AccountId32",
         },
         {
           name: "at",

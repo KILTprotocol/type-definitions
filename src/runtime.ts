@@ -14,17 +14,17 @@ const runtime: DefinitionsCall = {
               type: "Text",
             },
           ],
-          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, PalletDidLookupLinkableAccountLinkableAccountId, Balance, Key, BlockNumber>>"
+          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>"
         },
         query_did_by_account_id: {
           description: "Return the information relative to the DID to which the provided account is linked, if any.",
           params: [
             {
-              name: "name",
-              type: "PalletDidLookupLinkableAccountLinkableAccountId"
+              name: "account",
+              type: "AccountId32"
             }
           ],
-          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, PalletDidLookupLinkableAccountLinkableAccountId, Balance, Key, BlockNumber>>"
+          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>"
         },
         query_did: {
           description: "Return the information relative to the owner of the provided DID, if present.",
@@ -34,7 +34,7 @@ const runtime: DefinitionsCall = {
               type: "AccountId32"
             }
           ],
-          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, PalletDidLookupLinkableAccountLinkableAccountId, Balance, Key, BlockNumber>>"
+          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>"
         }
       },
       version: 1
