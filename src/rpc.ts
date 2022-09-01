@@ -38,6 +38,53 @@ const rpc: Record<string, Record<string, DefinitionRpc | DefinitionRpcSub>> = {
         },
       ],
       type: "Vec<(Hash, PublicCredentialsCredentialsCredentialEntry)>"
+    },
+  },
+  did: {
+    query: {
+      description: "Return the DID information linked to the provided DID identifier, if found.",
+      params: [
+        {
+          name: "account",
+          type: "AccountId32",
+        },
+        {
+          name: "at",
+          type: "Hash",
+          isOptional: true,
+        },
+      ],
+      type: "Option<DidLinkedInfo>"
+    },
+    queryByWeb3Name: {
+      description: "Return the DID information linked to the provided web3name, if found.",
+      params: [
+        {
+          name: "web3Name",
+          type: "String",
+        },
+        {
+          name: "at",
+          type: "Hash",
+          isOptional: true,
+        },
+      ],
+      type: "Option<DidLinkedInfo>"
+    },
+    queryByAccount: {
+      description: "Return the DID information linked to the provided account, if found.",
+      params: [
+        {
+          name: "account",
+          type: "PalletDidLookupLinkableAccountLinkableAccountId",
+        },
+        {
+          name: "at",
+          type: "Hash",
+          isOptional: true,
+        },
+      ],
+      type: "Option<DidLinkedInfo>"
     }
   }
 }
