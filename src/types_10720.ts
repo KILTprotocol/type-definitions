@@ -2,7 +2,7 @@ import type {
   RegistryTypes,
 } from "@polkadot/types/types"
 
-export const types10700: RegistryTypes = {
+export const types10720: RegistryTypes = {
   // DID state_call
   RawDidLinkedInfo: {
     identifier: "AccountId32",
