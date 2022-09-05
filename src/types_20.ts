@@ -1,5 +1,5 @@
-import type { RegistryTypes } from "@polkadot/types/types";
-import { types19 } from "./types_19";
+import type { RegistryTypes } from "@polkadot/types/types"
+import { types19 } from "./types_19"
 
 export const types20: RegistryTypes = {
   ...types19,
@@ -105,4 +105,4 @@ export const types20: RegistryTypes = {
       MaxOldAttestationKeysExceeded: "Null",
     },
   },
-};
+}

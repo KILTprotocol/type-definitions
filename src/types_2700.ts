@@ -1,5 +1,5 @@
-import type { RegistryTypes } from "@polkadot/types/types";
-import { types25 } from "./types_25";
+import type { RegistryTypes } from "@polkadot/types/types"
+import { types25 } from "./types_25"
 
 export const types2700: RegistryTypes = {
   ...types25,
@@ -105,4 +105,4 @@ export const types2700: RegistryTypes = {
   DidStorageVersion: {
     _enum: ["V1", "V2", "V3"],
   },
-};
+}

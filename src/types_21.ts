@@ -1,5 +1,5 @@
-import type { RegistryTypes } from "@polkadot/types/types";
-import { types20 } from "./types_20";
+import type { RegistryTypes } from "@polkadot/types/types"
+import { types20 } from "./types_20"
 
 export const types21: RegistryTypes = {
   ...types20,
@@ -58,4 +58,4 @@ export const types21: RegistryTypes = {
     delegations: "Vec<Stake>",
     total: "Balance",
   },
-};
+}

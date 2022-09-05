@@ -1,4 +1,4 @@
-import type { RegistryTypes } from "@polkadot/types/types";
+import type { RegistryTypes } from "@polkadot/types/types"
 
 export const types8: RegistryTypes = {
   AccountInfo: "AccountInfoWithDualRefCount",
@@ -77,4 +77,4 @@ export const types8: RegistryTypes = {
       Finished: "ReferendumInfoFinished",
     },
   },
-};
+}

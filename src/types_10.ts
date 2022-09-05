@@ -1,4 +1,4 @@
-import type { RegistryTypes } from "@polkadot/types/types";
+import type { RegistryTypes } from "@polkadot/types/types"
 
 export const types10: RegistryTypes = {
   // Runtime
@@ -234,4 +234,4 @@ export const types10: RegistryTypes = {
       Leaving: "SessionIndex",
     },
   },
-};
+}

@@ -1,5 +1,5 @@
-import type { RegistryTypes } from "@polkadot/types/types";
-import { types17 } from "./types_17";
+import type { RegistryTypes } from "@polkadot/types/types"
+import { types17 } from "./types_17"
 
 export const types18: RegistryTypes = {
   ...types17,
@@ -24,4 +24,4 @@ export const types18: RegistryTypes = {
     publicKeysToRemove: "BTreeSet<KeyIdOf>",
     newEndpointUrl: "Option<Url>",
   },
-};
+}

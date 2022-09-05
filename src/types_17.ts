@@ -1,5 +1,5 @@
-import type { RegistryTypes } from "@polkadot/types/types";
-import { types12 } from "./types_12";
+import type { RegistryTypes } from "@polkadot/types/types"
+import { types12 } from "./types_12"
 
 export const types17: RegistryTypes = {
   ...types12,
@@ -21,4 +21,4 @@ export const types17: RegistryTypes = {
   DelegationStorageVersion: {
     _enum: ["V1", "V2"],
   },
-};
+}

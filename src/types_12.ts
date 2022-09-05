@@ -1,5 +1,5 @@
-import type { RegistryTypes } from "@polkadot/types/types";
-import { types10 } from "./types_10";
+import type { RegistryTypes } from "@polkadot/types/types"
+import { types10 } from "./types_10"
 
 export const types12: RegistryTypes = {
   ...types10,
@@ -23,4 +23,4 @@ export const types12: RegistryTypes = {
       "Ecdsa-Secp256k1": "EcdsaSignature",
     },
   },
-};
+}

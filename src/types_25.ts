@@ -1,5 +1,5 @@
-import type { RegistryTypes } from "@polkadot/types/types";
-import { types23 } from "./types_23";
+import type { RegistryTypes } from "@polkadot/types/types"
+import { types23 } from "./types_23"
 
 export const types25: RegistryTypes = {
   ...types23,
@@ -9,4 +9,4 @@ export const types25: RegistryTypes = {
     call: "DidCallableOf",
     submitter: "AccountId",
   },
-};
+}

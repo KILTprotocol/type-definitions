@@ -1,4 +1,4 @@
-import type { RegistryTypes } from "@polkadot/types/types";
+import type { RegistryTypes } from "@polkadot/types/types"
 
 export const types9: RegistryTypes = {
   // Runtime types
@@ -175,4 +175,4 @@ export const types9: RegistryTypes = {
     block: "BlockNumber",
     amount: "Balance",
   },
-};
+}
