@@ -31,41 +31,41 @@ export const types10720: RegistryTypes = {
     identifier: "AccountId32",
     accounts: "Vec<AccountId32>",
     w3n: "Option<String>",
-    serviceEndpoints: "Vec<ServiceEndpoint>",
-    details: "DidDetails"
+    serviceEndpoints: "Vec<RpcServiceEndpoint>",
+    details: "RpcDidDetails"
   },
-  ServiceEndpoint: {
+  RpcServiceEndpoint: {
     id: "String",
     serviceTypes: "Vec<String>",
     urls: "Vec<String>"
   },
-  DidDetails: {
+  RpcDidDetails: {
     authenticationKey: "Hash",
     keyAgreementKeys: "BTreeSet<Hash>",
     delegationKey: "Option<Hash>",
     attestationKey: "Option<Hash>",
-    publicKeys: "BTreeMap<Hash, PublicKeyDetails>",
+    publicKeys: "BTreeMap<Hash, RpcPublicKeyDetails>",
     lastTxCounter: "BlockNumber",
     deposit: "KiltSupportDeposit<AccountId32, Balance>"
   },
-  PublicKeyDetails: {
-    key: "DidPublicKey",
+  RpcPublicKeyDetails: {
+    key: "RpcDidPublicKey",
     blockNumber: "BlockNumber"
   },
-  DidPublicKey: {
+  RpcDidPublicKey: {
     _enum: {
-      PublicVerificationKey: "DidVerificationKey",
-      PublicEncryptionKey: "DidEncryptionKey",
+      PublicVerificationKey: "RpcDidVerificationKey",
+      PublicEncryptionKey: "RpcDidEncryptionKey",
     },
   },
-  DidVerificationKey: {
+  RpcDidVerificationKey: {
     _enum: {
       Ed25519: "AccountId32",
       Sr25519: "AccountId32",
       Ecdsa: "AccountId33",
     },
   },
-  DidEncryptionKey: {
+  RpcDidEncryptionKey: {
     _enum: {
       // Raw public key
       X25519: "[u8; 32]",
