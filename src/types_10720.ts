@@ -60,12 +60,9 @@ export const types10720: RegistryTypes = {
   },
   DidVerificationKey: {
     _enum: {
-      // SS58-encoded public key (consumer must call decodeAddress)
-      Ed25519: "Text",
-      // SS58-encoded public key (consumer must call decodeAddress)
-      Sr25519: "Text",
-      // SS58-encoded public key (consumer must call decodeAddress)
-      Ecdsa: "Text",
+      Ed25519: "AccountId32",
+      Sr25519: "AccountId32",
+      Ecdsa: "AccountId33",
     },
   },
   DidEncryptionKey: {
