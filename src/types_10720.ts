@@ -58,6 +58,7 @@ export const types10720: RegistryTypes = {
       PublicEncryptionKey: "RpcDidEncryptionKey",
     },
   },
+  // Base58-encoded public verification key
   RpcDidVerificationKey: {
     _enum: {
       Ed25519: "AccountId32",
@@ -65,10 +66,10 @@ export const types10720: RegistryTypes = {
       Ecdsa: "AccountId33",
     },
   },
+  // Base58-encoded public encryption key
   RpcDidEncryptionKey: {
     _enum: {
-      // Raw public key
-      X25519: "[u8; 32]",
+      X25519: "AccountId32",
     },
   }
 }
