@@ -1,6 +1,4 @@
-import type {
-  DefinitionsCall,
-} from "@polkadot/types/types"
+import type { DefinitionsCall } from "@polkadot/types/types";
 
 const runtime: DefinitionsCall = {
   DidApi: [
@@ -14,32 +12,54 @@ const runtime: DefinitionsCall = {
               type: "Text",
             },
           ],
-          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>"
+          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>",
         },
         query_did_by_account_id: {
           description: "Return the information relative to the DID to which the provided account is linked, if any.",
           params: [
             {
               name: "account",
-              type: "AccountId32"
-            }
+              type: "AccountId32",
+            },
           ],
-          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>"
+          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>",
         },
         query_did: {
           description: "Return the information relative to the owner of the provided DID, if present.",
           params: [
             {
               name: "did",
-              type: "AccountId32"
-            }
+              type: "AccountId32",
+            },
           ],
-          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>"
-        }
+          type: "Option<RawDidLinkedInfo<AccountId32, AccountId32, AccountId32, Balance, Key, BlockNumber>>",
+        },
       },
-      version: 1
-    }
-  ]
-}
+      version: 1,
+    },
+  ],
+  ParachainStakingApi: [
+    {
+      methods: {
+        get_staking_rates: {
+          description: "Calculates the current staking and reward rates for collators and delegators",
+          params: [],
+          type: "StakingRates",
+        },
+        get_unclaimed_staking_rewards: {
+          description: "Calculates the claimable staking rewards for a given account address",
+          params: [
+            {
+              name: "account",
+              type: "AccountId32",
+            },
+          ],
+          type: "Balance",
+        },
+      },
+      version: 1,
+    },
+  ],
+};
 
-export default runtime
+export default runtime;
