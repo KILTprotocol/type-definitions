@@ -14,7 +14,7 @@ export const types18: RegistryTypes = {
     newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
     newAttestationKey: "Option<DidVerificationKey>",
     newDelegationKey: "Option<DidVerificationKey>",
-    newEndpointUrl: "Option<Url>",
+    newEndpointUrl: "Option<Url>"
   },
   DidUpdateDetails: {
     newAuthenticationKey: "Option<DidVerificationKey>",
@@ -22,6 +22,6 @@ export const types18: RegistryTypes = {
     attestationKeyUpdate: "DidVerificationKeyUpdateAction",
     delegationKeyUpdate: "DidVerificationKeyUpdateAction",
     publicKeysToRemove: "BTreeSet<KeyIdOf>",
-    newEndpointUrl: "Option<Url>",
-  },
+    newEndpointUrl: "Option<Url>"
+  }
 }

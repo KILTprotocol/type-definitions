@@ -7,6 +7,6 @@ export const types25: RegistryTypes = {
     did: "DidIdentifierOf",
     txCounter: "u64",
     call: "DidCallableOf",
-    submitter: "AccountId",
-  },
+    submitter: "AccountId"
+  }
 }

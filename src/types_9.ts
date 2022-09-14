@@ -21,7 +21,7 @@ export const types9: RegistryTypes = {
     ctypeHash: "CtypeHashOf",
     attester: "AttesterOf",
     delegationId: "Option<DelegationNodeIdOf>",
-    revoked: "bool",
+    revoked: "bool"
   },
 
   // Delegation types
@@ -32,14 +32,14 @@ export const types9: RegistryTypes = {
   DelegationRoot: {
     ctypeHash: "CtypeHashOf",
     owner: "DelegatorIdOf",
-    revoked: "bool",
+    revoked: "bool"
   },
   DelegationNode: {
     rootId: "DelegationNodeIdOf",
     parent: "Option<DelegationNodeIdOf>",
     owner: "DelegatorIdOf",
     permissions: "Permissions",
-    revoked: "bool",
+    revoked: "bool"
   },
 
   // Did types
@@ -51,41 +51,41 @@ export const types9: RegistryTypes = {
   DidVerificationKey: {
     _enum: {
       Ed25519: "[u8; 32]",
-      Sr25519: "[u8; 32]",
-    },
+      Sr25519: "[u8; 32]"
+    }
   },
   DidEncryptionKey: {
     _enum: {
-      X25519: "[u8; 32]",
-    },
+      X25519: "[u8; 32]"
+    }
   },
   DidPublicKey: {
     _enum: {
       PublicVerificationKey: "DidVerificationKey",
-      PublicEncryptionKey: "DidEncryptionKey",
-    },
+      PublicEncryptionKey: "DidEncryptionKey"
+    }
   },
   DidVerificationKeyRelationship: {
     _enum: [
       "Authentication",
       "CapabilityDelegation",
       "CapabilityInvocation",
-      "AssertionMethod",
-    ],
+      "AssertionMethod"
+    ]
   },
   DidSignature: {
     _enum: {
       Ed25519: "Ed25519Signature",
-      Sr25519: "Sr25519Signature",
-    },
+      Sr25519: "Sr25519Signature"
+    }
   },
   DidError: {
     _enum: {
       StorageError: "StorageError",
       SignatureError: "SignatureError",
       UrlError: "UrlError",
-      InternalError: "Null",
-    },
+      InternalError: "Null"
+    }
   },
   StorageError: {
     _enum: {
@@ -94,21 +94,21 @@ export const types9: RegistryTypes = {
       DidKeyNotPresent: "DidVerificationKeyRelationship",
       VerificationKeyNotPresent: "Null",
       CurrentlyActiveKey: "Null",
-      MaxTxCounterValue: "Null",
-    },
+      MaxTxCounterValue: "Null"
+    }
   },
   SignatureError: {
-    _enum: ["InvalidSignatureFormat", "InvalidSignature", "InvalidNonce"],
+    _enum: ["InvalidSignatureFormat", "InvalidSignature", "InvalidNonce"]
   },
   KeyError: {
-    _enum: ["InvalidVerificationKeyFormat", "InvalidEncryptionKeyFormat"],
+    _enum: ["InvalidVerificationKeyFormat", "InvalidEncryptionKeyFormat"]
   },
   UrlError: {
-    _enum: ["InvalidUrlEncoding", "InvalidUrlScheme"],
+    _enum: ["InvalidUrlEncoding", "InvalidUrlScheme"]
   },
   DidPublicKeyDetails: {
     key: "DidPublicKey",
-    blockNumber: "BlockNumberOf",
+    blockNumber: "BlockNumberOf"
   },
   DidDetails: {
     authenticationKey: "KeyIdOf",
@@ -117,7 +117,7 @@ export const types9: RegistryTypes = {
     attestationKey: "Option<KeyIdOf>",
     publicKeys: "BTreeMap<KeyIdOf, DidPublicKeyDetails>",
     endpointUrl: "Option<Url>",
-    lastTxCounter: "u64",
+    lastTxCounter: "u64"
   },
   DidCreationOperation: {
     did: "DidIdentifierOf",
@@ -125,7 +125,7 @@ export const types9: RegistryTypes = {
     newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
     newAttestationKey: "Option<DidVerificationKey>",
     newDelegationKey: "Option<DidVerificationKey>",
-    newEndpointUrl: "Option<Url>",
+    newEndpointUrl: "Option<Url>"
   },
   DidUpdateOperation: {
     did: "DidIdentifierOf",
@@ -135,44 +135,44 @@ export const types9: RegistryTypes = {
     delegationKeyUpdate: "DidVerificationKeyUpdateAction",
     publicKeysToRemove: "BTreeSet<KeyIdOf>",
     newEndpointUrl: "Option<Url>",
-    txCounter: "u64",
+    txCounter: "u64"
   },
   DidVerificationKeyUpdateAction: {
     _enum: {
       Ignore: "Null",
       Change: "DidVerificationKey",
-      Delete: "Null",
-    },
+      Delete: "Null"
+    }
   },
   DidDeletionOperation: {
     did: "DidIdentifierOf",
-    txCounter: "u64",
+    txCounter: "u64"
   },
   DidAuthorizedCallOperation: {
     did: "DidIdentifierOf",
     txCounter: "u64",
-    call: "DidCallableOf",
+    call: "DidCallableOf"
   },
   HttpUrl: {
-    payload: "Text",
+    payload: "Text"
   },
   FtpUrl: {
-    payload: "Text",
+    payload: "Text"
   },
   IpfsUrl: {
-    payload: "Text",
+    payload: "Text"
   },
   Url: {
     _enum: {
       Http: "HttpUrl",
       Ftp: "FtpUrl",
-      Ipfs: "IpfsUrl",
-    },
+      Ipfs: "IpfsUrl"
+    }
   },
 
   // Launch types
   LockedBalance: {
     block: "BlockNumber",
-    amount: "Balance",
-  },
+    amount: "Balance"
+  }
 }
