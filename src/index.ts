@@ -33,8 +33,9 @@ export {
   types25,
   types2700,
   types10720,
-  types10730,
-  types10730 as latest
+  types10900,
+  // TODO: Change to types10900 when deployed to Spiritnet
+  types10720 as latest
 }
 
 // Export runtime APIs definitions
