@@ -13,7 +13,7 @@ import { types23 } from "./types_23"
 import { types25 } from "./types_25"
 import { types2700 } from "./types_2700"
 import { types10720 } from "./types_10720"
-import { types10730 } from "./types_10730"
+import { types10900 } from "./types_10900"
 
 import runtime from "./runtime"
 import rpc from "./rpc"
@@ -95,12 +95,12 @@ export const typeBundleForPolkadot: OverrideBundleDefinition = {
       types: types2700
     },
     {
-      minmax: [10720, 10720],
+      minmax: [10720, 10899],
       types: types10720
     },
     {
-      minmax: [10730, undefined],
-      types: types10730
+      minmax: [10900, undefined],
+      types: types10900
     }
   ],
   runtime,

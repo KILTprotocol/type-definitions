@@ -69,5 +69,13 @@ export const types10720: RegistryTypes = {
     _enum: {
       X25519: "AccountId32"
     }
+  },
+  // TODO: Remove when we bump Spiritnet to 10900
+  // ParachainStakingApi get_staking_rates
+  StakingRates: {
+    collatorStakingRate: "Perquintill",
+    collatorRewardRate: "Perquintill",
+    delegatorStakingRate: "Perquintill",
+    delegatorRewardRate: "Perquintill"
   }
 }
