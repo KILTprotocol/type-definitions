@@ -46,7 +46,7 @@ const runtime: DefinitionsCall = {
       methods: {
         get_staking_rates: {
           description:
-            "Calculates the current staking and reward rates for collators and delegators",
+            "Calculate the current staking and reward rates for collators and delegators",
           params: [],
           type: "StakingRates"
         },
