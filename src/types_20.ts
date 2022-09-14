@@ -14,17 +14,17 @@ export const types20: RegistryTypes = {
     // new
     delegators: "OrderedSet<Stake, MaxDelegatorsPerCollator>",
     total: "Balance",
-    state: "CollatorStatus",
+    state: "CollatorStatus"
   },
   MaxDelegatorsPerCollator: "u32",
   Delegator: {
     // new
     delegations: "OrderedSet<Stake, MaxCollatorsPerDelegator>",
-    total: "Balance",
+    total: "Balance"
   },
   MaxCollatorsPerDelegator: "u32",
   StakingStorageVersion: {
-    _enum: ["V1_0_0", "V2_0_0", "V3_0_0", "V4"],
+    _enum: ["V1_0_0", "V2_0_0", "V3_0_0", "V4"]
   },
 
   // Attestation
@@ -39,7 +39,7 @@ export const types20: RegistryTypes = {
     parent: "Option<DelegationNodeIdOf>",
     // new
     children: "BoundedBTreeSet<DelegationNodeIdOf, MaxChildren>",
-    details: "DelegationDetails",
+    details: "DelegationDetails"
   },
   MaxChildren: "u32",
 
@@ -60,7 +60,7 @@ export const types20: RegistryTypes = {
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
     newAttestationKey: "Option<DidVerificationKey>",
     newDelegationKey: "Option<DidVerificationKey>",
-    newServiceEndpoints: "Option<ServiceEndpoints>",
+    newServiceEndpoints: "Option<ServiceEndpoints>"
   },
   DidUpdateDetails: {
     newAuthenticationKey: "Option<DidVerificationKey>",
@@ -70,7 +70,7 @@ export const types20: RegistryTypes = {
     delegationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
     // new
     publicKeysToRemove: "DidVerificationKeysToRevoke",
-    serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints",
+    serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints"
   },
   DidDetails: {
     authenticationKey: "KeyIdOf",
@@ -81,13 +81,13 @@ export const types20: RegistryTypes = {
     // new
     publicKeys: "DidPublicKeyMap",
     serviceEndpoints: "Option<ServiceEndpoints>",
-    lastTxCounter: "u64",
+    lastTxCounter: "u64"
   },
   ServiceEndpoints: {
     contentHash: "Hash",
     // new
     urls: "BoundedVec<Url, MaxEndpointUrlsCount>",
-    contentType: "ContentType",
+    contentType: "ContentType"
   },
   MaxUrlLength: "u32",
   MaxEndpointUrlsCount: "u32",
@@ -102,7 +102,7 @@ export const types20: RegistryTypes = {
       // new
       MaxPublicKeysPerDidKeyIdentifierExceeded: "Null",
       MaxTotalKeyAgreementKeysExceeded: "Null",
-      MaxOldAttestationKeysExceeded: "Null",
-    },
-  },
+      MaxOldAttestationKeysExceeded: "Null"
+    }
+  }
 }

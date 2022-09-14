@@ -21,7 +21,7 @@ export const types10: RegistryTypes = {
     ctypeHash: "CtypeHashOf",
     attester: "AttesterOf",
     delegationId: "Option<DelegationNodeIdOf>",
-    revoked: "bool",
+    revoked: "bool"
   },
 
   // Delegations
@@ -32,14 +32,14 @@ export const types10: RegistryTypes = {
   DelegationRoot: {
     ctypeHash: "CtypeHashOf",
     owner: "DelegatorIdOf",
-    revoked: "bool",
+    revoked: "bool"
   },
   DelegationNode: {
     rootId: "DelegationNodeIdOf",
     parent: "Option<DelegationNodeIdOf>",
     owner: "DelegatorIdOf",
     permissions: "Permissions",
-    revoked: "bool",
+    revoked: "bool"
   },
 
   // DIDs
@@ -51,33 +51,33 @@ export const types10: RegistryTypes = {
   DidVerificationKey: {
     _enum: {
       Ed25519: "[u8; 32]",
-      Sr25519: "[u8; 32]",
-    },
+      Sr25519: "[u8; 32]"
+    }
   },
   DidEncryptionKey: {
     _enum: {
-      X25519: "[u8; 32]",
-    },
+      X25519: "[u8; 32]"
+    }
   },
   DidPublicKey: {
     _enum: {
       PublicVerificationKey: "DidVerificationKey",
-      PublicEncryptionKey: "DidEncryptionKey",
-    },
+      PublicEncryptionKey: "DidEncryptionKey"
+    }
   },
   DidVerificationKeyRelationship: {
     _enum: [
       "Authentication",
       "CapabilityDelegation",
       "CapabilityInvocation",
-      "AssertionMethod",
-    ],
+      "AssertionMethod"
+    ]
   },
   DidSignature: {
     _enum: {
       Ed25519: "Ed25519Signature",
-      Sr25519: "Sr25519Signature",
-    },
+      Sr25519: "Sr25519Signature"
+    }
   },
   DidError: {
     _enum: {
@@ -85,8 +85,8 @@ export const types10: RegistryTypes = {
       SignatureError: "SignatureError",
       UrlError: "UrlError",
       InputError: "InputError",
-      InternalError: "Null",
-    },
+      InternalError: "Null"
+    }
   },
   StorageError: {
     _enum: {
@@ -95,28 +95,28 @@ export const types10: RegistryTypes = {
       DidKeyNotPresent: "DidVerificationKeyRelationship",
       VerificationKeyNotPresent: "Null",
       CurrentlyActiveKey: "Null",
-      MaxTxCounterValue: "Null",
-    },
+      MaxTxCounterValue: "Null"
+    }
   },
   SignatureError: {
-    _enum: ["InvalidSignatureFormat", "InvalidSignature", "InvalidNonce"],
+    _enum: ["InvalidSignatureFormat", "InvalidSignature", "InvalidNonce"]
   },
   KeyError: {
-    _enum: ["InvalidVerificationKeyFormat", "InvalidEncryptionKeyFormat"],
+    _enum: ["InvalidVerificationKeyFormat", "InvalidEncryptionKeyFormat"]
   },
   UrlError: {
-    _enum: ["InvalidUrlEncoding", "InvalidUrlScheme"],
+    _enum: ["InvalidUrlEncoding", "InvalidUrlScheme"]
   },
   InputError: {
     _enum: [
       "MaxKeyAgreementKeysLimitExceeded",
       "MaxVerificationKeysToRemoveLimitExceeded",
-      "MaxUrlLengthExceeded",
-    ],
+      "MaxUrlLengthExceeded"
+    ]
   },
   DidPublicKeyDetails: {
     key: "DidPublicKey",
-    blockNumber: "BlockNumberOf",
+    blockNumber: "BlockNumberOf"
   },
   DidDetails: {
     authenticationKey: "KeyIdOf",
@@ -125,7 +125,7 @@ export const types10: RegistryTypes = {
     attestationKey: "Option<KeyIdOf>",
     publicKeys: "BTreeMap<KeyIdOf, DidPublicKeyDetails>",
     endpointUrl: "Option<Url>",
-    lastTxCounter: "u64",
+    lastTxCounter: "u64"
   },
   DidCreationOperation: {
     did: "DidIdentifierOf",
@@ -133,7 +133,7 @@ export const types10: RegistryTypes = {
     newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
     newAttestationKey: "Option<DidVerificationKey>",
     newDelegationKey: "Option<DidVerificationKey>",
-    newEndpointUrl: "Option<Url>",
+    newEndpointUrl: "Option<Url>"
   },
   DidUpdateOperation: {
     did: "DidIdentifierOf",
@@ -143,45 +143,45 @@ export const types10: RegistryTypes = {
     delegationKeyUpdate: "DidVerificationKeyUpdateAction",
     publicKeysToRemove: "BTreeSet<KeyIdOf>",
     newEndpointUrl: "Option<Url>",
-    txCounter: "u64",
+    txCounter: "u64"
   },
   DidVerificationKeyUpdateAction: {
     _enum: {
       Ignore: "Null",
       Change: "DidVerificationKey",
-      Delete: "Null",
-    },
+      Delete: "Null"
+    }
   },
   DidDeletionOperation: {
     did: "DidIdentifierOf",
-    txCounter: "u64",
+    txCounter: "u64"
   },
   DidAuthorizedCallOperation: {
     did: "DidIdentifierOf",
     txCounter: "u64",
-    call: "DidCallableOf",
+    call: "DidCallableOf"
   },
   HttpUrl: {
-    payload: "Text",
+    payload: "Text"
   },
   FtpUrl: {
-    payload: "Text",
+    payload: "Text"
   },
   IpfsUrl: {
-    payload: "Text",
+    payload: "Text"
   },
   Url: {
     _enum: {
       Http: "HttpUrl",
       Ftp: "FtpUrl",
-      Ipfs: "IpfsUrl",
-    },
+      Ipfs: "IpfsUrl"
+    }
   },
 
   // LaunchPallet
   LockedBalance: {
     block: "BlockNumber",
-    amount: "Balance",
+    amount: "Balance"
   },
 
   // Staking
@@ -189,49 +189,49 @@ export const types10: RegistryTypes = {
   RoundInfo: {
     current: "SessionIndex",
     first: "BlockNumber",
-    length: "BlockNumber",
+    length: "BlockNumber"
   },
   OrderedSet: "Vec<Stake>",
   Stake: {
     owner: "AccountId",
-    amount: "Balance",
+    amount: "Balance"
   },
   TotalStake: {
     collators: "Balance",
-    delegators: "Balance",
+    delegators: "Balance"
   },
   InflationInfo: {
     collator: "StakingInfo",
-    delegator: "StakingInfo",
+    delegator: "StakingInfo"
   },
   StakingInfo: {
     maxRate: "Perquintill",
-    rewardRate: "RewardRate",
+    rewardRate: "RewardRate"
   },
   RewardRate: {
     annual: "Perquintill",
-    perBlock: "Perquintill",
+    perBlock: "Perquintill"
   },
   Delegator: {
     delegations: "Vec<Stake>",
-    total: "Balance",
+    total: "Balance"
   },
   CollatorSnapshot: {
     stake: "Balance",
     delegators: "Vec<Stake>",
-    total: "Balance",
+    total: "Balance"
   },
   Collator: {
     id: "AccountId",
     stake: "Balance",
     delegators: "Vec<Stake>",
     total: "Balance",
-    state: "CollatorStatus",
+    state: "CollatorStatus"
   },
   CollatorStatus: {
     _enum: {
       Active: "Null",
-      Leaving: "SessionIndex",
-    },
-  },
+      Leaving: "SessionIndex"
+    }
+  }
 }

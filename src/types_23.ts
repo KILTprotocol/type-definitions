@@ -17,15 +17,15 @@ export const types23: RegistryTypes = {
     delegators: "Vec<Stake>",
     total: "Balance",
     // renamed from state to status to be consistent
-    status: "CandidateStatus",
+    status: "CandidateStatus"
   },
   CandidateStatus: {
     _enum: {
       Active: "Null",
-      Leaving: "SessionIndex",
-    },
+      Leaving: "SessionIndex"
+    }
   },
   StakingStorageVersion: {
-    _enum: ["V1_0_0", "V2_0_0", "V3_0_0", "V4", "V5"],
-  },
+    _enum: ["V1_0_0", "V2_0_0", "V3_0_0", "V4", "V5"]
+  }
 }

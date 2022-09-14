@@ -6,21 +6,21 @@ export const types12: RegistryTypes = {
   // Staking updated types
   DelegationCounter: {
     round: "SessionIndex",
-    counter: "u32",
+    counter: "u32"
   },
   // DID updated types
   DidVerificationKey: {
     _enum: {
       Ed25519: "[u8; 32]",
       Sr25519: "[u8; 32]",
-      Secp256k1: "[u8; 33]",
-    },
+      Secp256k1: "[u8; 33]"
+    }
   },
   DidSignature: {
     _enum: {
       Ed25519: "Ed25519Signature",
       Sr25519: "Sr25519Signature",
-      "Ecdsa-Secp256k1": "EcdsaSignature",
-    },
-  },
+      "Ecdsa-Secp256k1": "EcdsaSignature"
+    }
+  }
 }

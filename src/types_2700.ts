@@ -7,7 +7,7 @@ export const types2700: RegistryTypes = {
   // Add deposit for attestations
   Deposit: {
     owner: "AccountId",
-    amount: "Balance",
+    amount: "Balance"
   },
   AttestationDetails: {
     ctypeHash: "CtypeHashOf",
@@ -15,7 +15,7 @@ export const types2700: RegistryTypes = {
     delegationId: "Option<DelegationNodeIdOf>",
     revoked: "bool",
     // Added
-    deposit: "Deposit",
+    deposit: "Deposit"
   },
 
   DidAuthorizedCallOperation: {
@@ -24,7 +24,7 @@ export const types2700: RegistryTypes = {
     call: "DidCallableOf",
     // Added
     blockNumber: "BlockNumber",
-    submitter: "AccountId",
+    submitter: "AccountId"
   },
 
   // Remove serviceEndpoints
@@ -36,7 +36,7 @@ export const types2700: RegistryTypes = {
     publicKeys: "DidPublicKeyMap",
     lastTxCounter: "u64",
     // Added
-    deposit: "Deposit",
+    deposit: "Deposit"
   },
 
   // Remove newServiceEndpoints
@@ -46,7 +46,7 @@ export const types2700: RegistryTypes = {
     submitter: "AccountId",
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
     newAssertionMethodKey: "Option<DidVerificationKey>",
-    newCapabilityDelegationKey: "Option<DidVerificationKey>",
+    newCapabilityDelegationKey: "Option<DidVerificationKey>"
   },
 
   // Remove UrlError
@@ -55,13 +55,16 @@ export const types2700: RegistryTypes = {
       StorageError: "StorageError",
       SignatureError: "SignatureError",
       InputError: "InputError",
-      InternalError: "Null",
-    },
+      InternalError: "Null"
+    }
   },
 
   // Remove MaxUrlLengthExceeded
   InputError: {
-    _enum: ["MaxKeyAgreementKeysLimitExceeded", "MaxVerificationKeysToRemoveLimitExceeded"],
+    _enum: [
+      "MaxKeyAgreementKeysLimitExceeded",
+      "MaxVerificationKeysToRemoveLimitExceeded"
+    ]
   },
 
   // Remove deprecated types
@@ -86,11 +89,16 @@ export const types2700: RegistryTypes = {
       CurrentlyActiveKey: "Null",
       MaxPublicKeysPerDidExceeded: "Null",
       MaxTotalKeyAgreementKeysExceeded: "Null",
-      DidAlreadyDeleted: "Null",
-    },
+      DidAlreadyDeleted: "Null"
+    }
   },
   SignatureError: {
-    _enum: ["InvalidSignatureFormat", "InvalidSignature", "InvalidNonce", "TransactionExpired"],
+    _enum: [
+      "InvalidSignatureFormat",
+      "InvalidSignature",
+      "InvalidNonce",
+      "TransactionExpired"
+    ]
   },
   DelegationNode: {
     hierarchyRootId: "DelegationNodeIdOf",
@@ -98,11 +106,11 @@ export const types2700: RegistryTypes = {
     children: "BoundedBTreeSet<DelegationNodeIdOf, MaxChildren>",
     details: "DelegationDetails",
     // new
-    deposit: "Deposit",
+    deposit: "Deposit"
   },
 
   // Add V3
   DidStorageVersion: {
-    _enum: ["V1", "V2", "V3"],
-  },
+    _enum: ["V1", "V2", "V3"]
+  }
 }

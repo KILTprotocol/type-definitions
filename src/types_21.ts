@@ -15,8 +15,8 @@ export const types21: RegistryTypes = {
       MaxPublicKeysPerDidKeyIdentifierExceeded: "Null",
       // renamed
       MaxTotalKeyAgreementKeysExceeded: "Null",
-      MaxOldAttestationKeysExceeded: "Null",
-    },
+      MaxOldAttestationKeysExceeded: "Null"
+    }
   },
   // removed
   DidUpdateDetails: undefined,
@@ -25,7 +25,7 @@ export const types21: RegistryTypes = {
     newKeyAgreementKeys: "DidNewKeyAgreementKeys",
     newAssertionMethodKey: "Option<DidVerificationKey>",
     newCapabilityDelegationKey: "Option<DidVerificationKey>",
-    newServiceEndpoints: "Option<ServiceEndpoints>",
+    newServiceEndpoints: "Option<ServiceEndpoints>"
   },
   DidDetails: {
     authenticationKey: "KeyIdOf",
@@ -36,11 +36,11 @@ export const types21: RegistryTypes = {
     assertionMethodKey: "Option<KeyIdOf>",
     publicKeys: "DidPublicKeyMap",
     serviceEndpoints: "Option<ServiceEndpoints>",
-    lastTxCounter: "u64",
+    lastTxCounter: "u64"
   },
   DelegateSignatureTypeOf: "DidSignature",
   ContentType: {
-    _enum: ["application/json", "application/ld+json"],
+    _enum: ["application/json", "application/ld+json"]
   },
 
   // fix: generics mostly don't work here, but OrderedSet is reduced to a Vec anyway
@@ -51,11 +51,11 @@ export const types21: RegistryTypes = {
     // fix
     delegators: "Vec<Stake>",
     total: "Balance",
-    state: "CollatorStatus",
+    state: "CollatorStatus"
   },
   Delegator: {
     // fix
     delegations: "Vec<Stake>",
-    total: "Balance",
-  },
+    total: "Balance"
+  }
 }

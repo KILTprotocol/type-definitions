@@ -11,24 +11,24 @@ export const types19: RegistryTypes = {
   ServiceEndpoints: {
     contentHash: "Hash",
     urls: "Vec<Url>",
-    contentType: "ContentType",
+    contentType: "ContentType"
   },
   DidFragmentUpdateAction_ServiceEndpoints: {
     _enum: {
       Ignore: "Null",
       Change: "ServiceEndpoints",
-      Delete: "Null",
-    },
+      Delete: "Null"
+    }
   },
   DidFragmentUpdateAction_DidVerificationKey: {
     _enum: {
       Ignore: "Null",
       Change: "DidVerificationKey",
-      Delete: "Null",
-    },
+      Delete: "Null"
+    }
   },
   ContentType: {
-    _enum: ["ApplicationJson", "ApplicationJsonLd"],
+    _enum: ["ApplicationJson", "ApplicationJsonLd"]
   },
 
   // Updated types
@@ -37,7 +37,7 @@ export const types19: RegistryTypes = {
     newKeyAgreementKeys: "BTreeSet<DidEncryptionKey>",
     newAttestationKey: "Option<DidVerificationKey>",
     newDelegationKey: "Option<DidVerificationKey>",
-    newServiceEndpoints: "Option<ServiceEndpoints>",
+    newServiceEndpoints: "Option<ServiceEndpoints>"
   },
   DidUpdateDetails: {
     newAuthenticationKey: "Option<DidVerificationKey>",
@@ -45,7 +45,7 @@ export const types19: RegistryTypes = {
     attestationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
     delegationKeyUpdate: "DidFragmentUpdateAction_DidVerificationKey",
     publicKeysToRemove: "BTreeSet<KeyIdOf>",
-    serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints",
+    serviceEndpointsUpdate: "DidFragmentUpdateAction_ServiceEndpoints"
   },
   DidDetails: {
     authenticationKey: "KeyIdOf",
@@ -54,9 +54,9 @@ export const types19: RegistryTypes = {
     attestationKey: "Option<KeyIdOf>",
     publicKeys: "BTreeMap<KeyIdOf, DidPublicKeyDetails>",
     serviceEndpoints: "Option<ServiceEndpoints>",
-    lastTxCounter: "u64",
+    lastTxCounter: "u64"
   },
   DidStorageVersion: {
-    _enum: ["V1", "V2"],
-  },
+    _enum: ["V1", "V2"]
+  }
 }

@@ -8,17 +8,17 @@ export const types17: RegistryTypes = {
     hierarchyRootId: "DelegationNodeIdOf",
     parent: "Option<DelegationNodeIdOf>",
     children: "BTreeSet<DelegationNodeIdOf>",
-    details: "DelegationDetails",
+    details: "DelegationDetails"
   },
   DelegationDetails: {
     owner: "DelegatorIdOf",
     revoked: "bool",
-    permissions: "Permissions",
+    permissions: "Permissions"
   },
   DelegationHierarchyDetails: {
-    ctypeHash: "CtypeHashOf",
+    ctypeHash: "CtypeHashOf"
   },
   DelegationStorageVersion: {
-    _enum: ["V1", "V2"],
-  },
+    _enum: ["V1", "V2"]
+  }
 }

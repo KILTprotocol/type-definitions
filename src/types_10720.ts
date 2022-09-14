@@ -1,6 +1,4 @@
-import type {
-  RegistryTypes,
-} from "@polkadot/types/types"
+import type { RegistryTypes } from "@polkadot/types/types"
 
 export const types10720: RegistryTypes = {
   // DID state_call
@@ -9,7 +7,7 @@ export const types10720: RegistryTypes = {
     accounts: "Vec<AccountId32>",
     w3n: "Option<Text>",
     serviceEndpoints: "Vec<RawServiceEndpoints>",
-    details: "RawDidDetails",
+    details: "RawDidDetails"
   },
   RawServiceEndpoints: {
     id: "Text",
@@ -55,21 +53,21 @@ export const types10720: RegistryTypes = {
   RpcDidPublicKey: {
     _enum: {
       PublicVerificationKey: "RpcDidVerificationKey",
-      PublicEncryptionKey: "RpcDidEncryptionKey",
-    },
+      PublicEncryptionKey: "RpcDidEncryptionKey"
+    }
   },
   // Base58-encoded public verification key
   RpcDidVerificationKey: {
     _enum: {
       Ed25519: "AccountId32",
       Sr25519: "AccountId32",
-      Ecdsa: "AccountId33",
-    },
+      Ecdsa: "AccountId33"
+    }
   },
   // Base58-encoded public encryption key
   RpcDidEncryptionKey: {
     _enum: {
-      X25519: "AccountId32",
-    },
+      X25519: "AccountId32"
+    }
   }
 }

@@ -7,7 +7,7 @@ export const types8: RegistryTypes = {
     ctypeHash: "Hash",
     attester: "AccountId",
     delegationId: "Option<DelegationNodeId>",
-    revoked: "bool",
+    revoked: "bool"
   },
   Balance: "u128",
   DelegationNode: {
@@ -15,18 +15,18 @@ export const types8: RegistryTypes = {
     parent: "Option<DelegationNodeId>",
     owner: "AccountId",
     permissions: "Permissions",
-    revoked: "bool",
+    revoked: "bool"
   },
   DelegationNodeId: "Hash",
   DelegationRoot: {
     ctypeHash: "Hash",
     owner: "AccountId",
-    revoked: "bool",
+    revoked: "bool"
   },
   DidRecord: {
     signKey: "Hash",
     boxKey: "Hash",
-    docRef: "Option<Vec<u8>>",
+    docRef: "Option<Vec<u8>>"
   },
   Index: "u64",
   LookupSource: "AccountId",
@@ -36,21 +36,21 @@ export const types8: RegistryTypes = {
   Signature: "MultiSignature",
   XCurrencyId: {
     chainId: "ChainId",
-    currencyId: "Vec<u8>",
+    currencyId: "Vec<u8>"
   },
   ChainId: {
     _enum: {
       RelayChain: "Null",
-      ParaChain: "ParaId",
-    },
+      ParaChain: "ParaId"
+    }
   },
   CurrencyIdOf: "CurrencyId",
   CurrencyId: {
     _enum: {
       DOT: 0,
       KSM: 1,
-      KILT: 2,
-    },
+      KILT: 2
+    }
   },
   XcmError: {
     _enum: {
@@ -68,13 +68,13 @@ export const types8: RegistryTypes = {
       FailedToDecode: 11,
       BadOrigin: 12,
       ExceedsMaxMessageSize: 13,
-      FailedToTransactAsset: 14,
-    },
+      FailedToTransactAsset: 14
+    }
   },
   ReferendumInfo: {
     _enum: {
       Ongoing: "ReferendumStatus",
-      Finished: "ReferendumInfoFinished",
-    },
-  },
+      Finished: "ReferendumInfoFinished"
+    }
+  }
 }
