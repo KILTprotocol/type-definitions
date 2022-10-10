@@ -1,3 +1,5 @@
+**This repo is archived since type definitions have been moved under the [KILT SDK repository](https://github.com/KILTprotocol/sdk-js).**
+
 # type-definitions
 
 KILT's type definitions for Polkadot.js 
